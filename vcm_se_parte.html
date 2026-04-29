@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sé parte de la comunidad | Valientes con Maleta</title>
+  <meta name="description" content="Súmate a Valientes con Maleta — la comunidad que acompaña a personas migrantes en Chile. Es gratis, real, y empieza con un mensaje de bienvenida que no es automático.">
+  <meta property="og:title" content="Sé parte — Valientes con Maleta, comunidad migrante en Chile">
+  <meta property="og:description" content="Únete como miembro, mentor/a o contribuyente. Cuatro maneras de pertenecer a la comunidad migrante de Chile.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Sé parte de Valientes con Maleta",
+    "description": "Página de conversión para unirse a la comunidad migrante de Chile.",
+    "publisher": { "@type": "Organization", "name": "Valientes con Maleta" },
+    "potentialAction": {
+      "@type": "JoinAction",
+      "target": "https://www.valientesconmaleta.com/se-parte#unirme"
+    }
+  }
+  </script>
+  <style>
+    /* === DESIGN TOKENS ============================================ */
+    :root {
+      --ink: #1A1614;
+      --cream: #F5EFE6;
+      --paper: #FFFCF7;
+      --terracotta: #C2522C;
+      --clay: #8C2F1F;
+      --wine: #4A1A2E;
+      --sage: #5C7560;
+      --sage-soft: #DDE4DD;
+      --ochre: #D4A14C;
+      --ochre-soft: #F5E9CF;
+      --niebla: #756A62;
+      --linea: #E5DBCD;
+      --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --max: 1240px;
+      --gap: clamp(16px, 2vw, 24px);
+      --pad-h: clamp(20px, 5vw, 64px);
+    }
+
+    /* === RESET & BASE ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; font-variation-settings: "opsz" 144, "SOFT" 30; }
+    h1 { font-size: clamp(40px, 7vw, 84px); }
+    h2 { font-size: clamp(28px, 4.2vw, 48px); }
+    h3 { font-size: clamp(20px, 2.4vw, 28px); }
+    p { font-size: 16px; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad-h); }
+
+    /* === COMPONENTES REUSADOS ===================================== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 26px; font-weight: 600; font-size: 15px;
+      border-radius: 4px; transition: all .2s ease;
+    }
+    .btn-primary { background: var(--terracotta); color: #fff; }
+    .btn-primary:hover { background: var(--clay); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+    .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+    .btn-arrow::after { content: "→"; transition: transform .2s; }
+    .btn-arrow:hover::after { transform: translateX(3px); }
+
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px; font-size: 12px;
+      font-weight: 500; letter-spacing: .02em;
+    }
+    .pill-sage { background: var(--sage-soft); color: var(--sage); }
+
+    .eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 14px;
+    }
+    .section-head {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 24px; margin-bottom: 56px; flex-wrap: wrap;
+    }
+    .section-head h2 { max-width: 740px; }
+    section.section { padding: clamp(64px, 9vw, 120px) 0; }
+
+    /* === NAV ====================================================== */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245, 239, 230, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--linea);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px; max-width: var(--max); margin: 0 auto;
+      padding: 0 var(--pad-h);
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--serif); font-weight: 600;
+      font-size: 19px; letter-spacing: -0.01em;
+    }
+    .logo-mark {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--terracotta); position: relative;
+      flex-shrink: 0;
+    }
+    .logo-mark::after {
+      content: ""; position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px; height: 9px;
+      border: 2px solid var(--paper); border-bottom: 0;
+      border-radius: 14px 14px 0 0;
+    }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-link {
+      font-size: 14px; font-weight: 500; color: var(--ink);
+      position: relative; padding: 4px 0;
+    }
+    .nav-link::after {
+      content: ""; position: absolute; left: 0; bottom: -2px;
+      width: 0; height: 1.5px; background: var(--terracotta);
+      transition: width .25s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-cta { display: flex; gap: 12px; align-items: center; }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+    .nav-burger span { width: 22px; height: 1.5px; background: var(--ink); display: block; }
+    @media (max-width: 920px) {
+      .nav-links, .nav-cta .btn-secondary { display: none; }
+      .nav-burger { display: flex; }
+    }
+
+    /* === HERO ===================================================== */
+    .page-hero {
+      padding: clamp(80px, 12vw, 160px) 0 clamp(64px, 9vw, 120px);
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(at 90% 10%, rgba(212,161,76,.18), transparent 50%),
+        var(--cream);
+    }
+    .page-hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: clamp(40px, 6vw, 100px);
+      align-items: center;
+    }
+    .page-hero h1 {
+      font-size: clamp(40px, 7.4vw, 92px);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      max-width: 12ch;
+      margin-bottom: 28px;
+      font-variation-settings: "opsz" 144, "SOFT" 50;
+    }
+    .page-hero h1 em {
+      font-style: italic; color: var(--terracotta);
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .page-hero-sub {
+      font-size: clamp(17px, 1.5vw, 20px);
+      line-height: 1.55; color: var(--niebla);
+      max-width: 540px; margin-bottom: 36px;
+    }
+    .page-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .page-hero-microcopy {
+      margin-top: 24px; font-size: 13px;
+      color: var(--niebla);
+      display: flex; gap: 8px; align-items: center;
+    }
+    .page-hero-microcopy::before {
+      content: ""; display: inline-block;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--sage);
+    }
+
+    /* Card de prueba social */
+    .hero-card {
+      background: var(--paper);
+      border: 1px solid var(--linea);
+      padding: clamp(28px, 3vw, 36px);
+      position: relative;
+    }
+    .hero-card::before {
+      content: ""; position: absolute; left: 0; top: 0;
+      width: 4px; height: 60px; background: var(--terracotta);
+    }
+    .hero-card-num {
+      font-family: var(--serif); font-size: clamp(48px, 6vw, 76px);
+      font-weight: 500; line-height: 1; color: var(--terracotta);
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .hero-card-lbl {
+      font-size: 14px; color: var(--ink);
+      line-height: 1.5; margin-bottom: 28px;
+    }
+    .hero-card-divider {
+      width: 32px; height: 1px;
+      background: var(--linea); margin: 24px 0;
+    }
+    .hero-card-q {
+      font-family: var(--serif); font-style: italic;
+      font-size: 16px; line-height: 1.45;
+      color: var(--ink); margin-bottom: 14px;
+    }
+    .hero-card-q::before {
+      content: """; color: var(--terracotta);
+      font-size: 1.6em; line-height: 0;
+      vertical-align: -0.3em; margin-right: 4px;
+    }
+    .hero-card-author {
+      font-size: 12px; color: var(--niebla);
+      letter-spacing: .04em;
+    }
+    .hero-card-author strong { color: var(--ink); display: block; font-size: 13px; letter-spacing: 0; }
+
+    @media (max-width: 880px) {
+      .page-hero-grid { grid-template-columns: 1fr; }
+      .hero-card { max-width: 480px; }
+    }
+
+    /* === BENEFICIOS =============================================== */
+    .benefits {
+      background: var(--paper);
+      border-top: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--linea);
+    }
+    .benefit {
+      padding: 36px 28px;
+      border-right: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+    }
+    .benefit-num {
+      font-family: var(--serif); font-size: 20px;
+      color: var(--terracotta); margin-bottom: 28px;
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+    .benefit-title {
+      font-family: var(--serif); font-size: 22px;
+      font-weight: 500; line-height: 1.2;
+      letter-spacing: -0.01em; margin-bottom: 12px;
+    }
+    .benefit-text {
+      font-size: 14px; color: var(--niebla);
+      line-height: 1.6;
+    }
+
+    /* === MODOS DE PARTICIPACIÓN =================================== */
+    .modes {
+      background: var(--cream);
+    }
+    .modes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap);
+    }
+    .mode {
+      background: var(--paper);
+      border: 1px solid var(--linea);
+      padding: clamp(32px, 4vw, 48px);
+      display: flex; flex-direction: column;
+      transition: .25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .mode:hover {
+      border-color: var(--terracotta);
+      transform: translateY(-3px);
+    }
+    .mode::before {
+      content: attr(data-num);
+      position: absolute; top: 24px; right: 28px;
+      font-family: var(--serif); font-size: 14px;
+      color: var(--terracotta); font-weight: 500;
+      letter-spacing: .04em;
+    }
+    .mode-tag {
+      display: inline-block; font-size: 11px;
+      font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--niebla); margin-bottom: 28px;
+    }
+    .mode-title {
+      font-family: var(--serif); font-size: clamp(26px, 3vw, 36px);
+      font-weight: 500; line-height: 1.15;
+      letter-spacing: -0.015em; margin-bottom: 18px;
+      max-width: 14ch;
+    }
+    .mode-text {
+      font-size: 16px; color: var(--ink);
+      line-height: 1.65; margin-bottom: 32px;
+    }
+    .mode-list {
+      list-style: none; margin-bottom: 36px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .mode-list li {
+      font-size: 14px; color: var(--ink);
+      padding-left: 24px; position: relative;
+      line-height: 1.5;
+    }
+    .mode-list li::before {
+      content: ""; position: absolute; left: 0; top: 8px;
+      width: 12px; height: 1px; background: var(--terracotta);
+    }
+    .mode-cost {
+      font-size: 12px; color: var(--niebla);
+      padding-top: 20px; margin-top: auto;
+      border-top: 1px solid var(--linea);
+      letter-spacing: .04em;
+    }
+    .mode-cost strong { color: var(--ink); font-weight: 600; }
+    .mode-cta {
+      margin-top: 24px;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 600; color: var(--terracotta);
+      padding-bottom: 2px;
+      border-bottom: 1.5px solid var(--terracotta);
+      align-self: flex-start;
+    }
+    .mode-cta::after { content: "→"; transition: transform .2s; }
+    .mode:hover .mode-cta::after { transform: translateX(4px); }
+
+    @media (max-width: 760px) { .modes-grid { grid-template-columns: 1fr; } }
+
+    /* === CÓMO FUNCIONA (PROCESO) ================================== */
+    .process {
+      background: var(--ink); color: var(--cream);
+      padding: clamp(80px, 10vw, 140px) 0;
+    }
+    .process .eyebrow { color: var(--ochre); }
+    .process h2 { color: var(--cream); margin-bottom: 24px; max-width: 16ch; }
+    .process h2 em { font-style: italic; color: var(--terracotta); }
+    .process-intro {
+      max-width: 580px;
+      color: rgba(245,239,230,.78);
+      font-size: 17px; line-height: 1.7;
+      margin-bottom: 80px;
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(245,239,230,.2);
+    }
+    .step {
+      padding: 36px 24px;
+      border-right: 1px solid rgba(245,239,230,.15);
+      border-bottom: 1px solid rgba(245,239,230,.2);
+      position: relative;
+    }
+    .step:last-child { border-right: 0; }
+    .step-num {
+      font-family: var(--serif); font-size: 16px;
+      color: var(--ochre); margin-bottom: 20px;
+      letter-spacing: .04em;
+    }
+    .step-time {
+      display: inline-block; padding: 4px 10px;
+      background: rgba(245,239,230,.1);
+      color: var(--ochre-soft);
+      font-size: 11px; letter-spacing: .04em;
+      margin-bottom: 20px;
+    }
+    .step-title {
+      font-family: var(--serif); font-size: 22px;
+      font-weight: 500; line-height: 1.2;
+      letter-spacing: -0.01em; margin-bottom: 14px;
+      color: var(--cream);
+    }
+    .step-text {
+      font-size: 14px; color: rgba(245,239,230,.7);
+      line-height: 1.6;
+    }
+    @media (max-width: 880px) {
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .step:nth-child(2) { border-right: 0; }
+    }
+    @media (max-width: 540px) {
+      .process-steps { grid-template-columns: 1fr; }
+      .step { border-right: 0; }
+    }
+
+    /* === TESTIMONIOS ============================================== */
+    .testimonios {
+      background: var(--paper);
+      border-top: 1px solid var(--linea);
+    }
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 0;
+    }
+    .test {
+      padding: clamp(32px, 4vw, 48px);
+      border-right: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+      display: flex; flex-direction: column;
+    }
+    .test:last-child { border-right: 0; }
+    .test-q {
+      font-family: var(--serif); font-style: italic;
+      font-size: clamp(18px, 1.6vw, 22px);
+      line-height: 1.4; font-weight: 400;
+      letter-spacing: -0.005em;
+      margin-bottom: 32px;
+      flex: 1;
+    }
+    .test-q::before {
+      content: """; color: var(--terracotta);
+      font-size: 1.6em; line-height: 0;
+      vertical-align: -0.3em; margin-right: 4px;
+    }
+    .test-author { display: flex; align-items: center; gap: 14px; padding-top: 24px; border-top: 1px solid var(--linea); }
+    .test-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-weight: 600; font-size: 16px;
+      color: #fff; flex-shrink: 0;
+    }
+    .test-author-name { font-weight: 600; font-size: 14px; }
+    .test-author-meta { font-size: 12px; color: var(--niebla); }
+
+    /* === FAQ ====================================================== */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: clamp(40px, 6vw, 80px);
+    }
+    .faq-list { border-top: 1px solid var(--ink); }
+    .faq-item {
+      border-bottom: 1px solid var(--linea);
+      padding: 28px 0;
+    }
+    .faq-q {
+      font-family: var(--serif); font-size: clamp(18px, 1.7vw, 22px);
+      font-weight: 500; line-height: 1.3;
+      letter-spacing: -0.01em; margin-bottom: 14px;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 16px;
+    }
+    .faq-q::after {
+      content: "+"; font-family: var(--sans); font-weight: 300;
+      font-size: 28px; line-height: .8; color: var(--terracotta);
+      flex-shrink: 0;
+    }
+    details[open] .faq-q::after { content: "−"; }
+    .faq-a {
+      font-size: 15px; color: var(--niebla);
+      line-height: 1.7; padding-top: 4px;
+    }
+    .faq-a a { color: var(--terracotta); border-bottom: 1px solid var(--terracotta); }
+    details summary { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    @media (max-width: 760px) {
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === CTA FINAL ================================================ */
+    .cta-final {
+      background: var(--terracotta); color: #fff;
+      padding: clamp(80px, 12vw, 160px) 0;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-final::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(at 20% 80%, rgba(0,0,0,.15), transparent 50%),
+        radial-gradient(at 80% 20%, rgba(212,161,76,.25), transparent 50%);
+    }
+    .cta-final-inner { position: relative; }
+    .cta-final h2 {
+      color: #fff; font-weight: 400;
+      font-size: clamp(36px, 5.5vw, 68px);
+      max-width: 16ch; margin: 0 auto 24px;
+      letter-spacing: -0.025em;
+    }
+    .cta-final h2 em {
+      font-style: italic;
+      color: var(--ochre-soft);
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .cta-final p {
+      color: rgba(255,255,255,.85);
+      font-size: 18px; max-width: 540px;
+      margin: 0 auto 40px;
+    }
+    .cta-final .btn { background: #fff; color: var(--terracotta); }
+    .cta-final .btn:hover { background: var(--ochre-soft); }
+
+    /* === FORM SECTION ============================================= */
+    .join-form {
+      background: var(--paper);
+      border: 1px solid var(--linea);
+      padding: clamp(40px, 5vw, 64px);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .join-form h3 {
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .join-form-sub {
+      color: var(--niebla); font-size: 16px;
+      margin-bottom: 36px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .form-field { display: flex; flex-direction: column; }
+    .form-field label {
+      font-size: 12px; font-weight: 600; color: var(--niebla);
+      letter-spacing: .04em; margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .form-field input,
+    .form-field select {
+      padding: 14px 16px; font-size: 15px; font-family: var(--sans);
+      background: var(--cream); border: 1px solid var(--linea);
+      border-radius: 4px; color: var(--ink);
+      transition: border-color .2s;
+    }
+    .form-field input:focus,
+    .form-field select:focus {
+      outline: none; border-color: var(--terracotta);
+    }
+    .form-checkbox {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 13px; color: var(--niebla); line-height: 1.5;
+      margin: 24px 0 32px;
+    }
+    .form-checkbox input { margin-top: 3px; flex-shrink: 0; }
+    .form-checkbox a { color: var(--terracotta); border-bottom: 1px solid var(--terracotta); }
+    .form-submit {
+      width: 100%; padding: 18px; font-size: 16px;
+      background: var(--terracotta); color: #fff;
+      border-radius: 4px; font-weight: 600; transition: .2s;
+    }
+    .form-submit:hover { background: var(--clay); }
+    .form-meta {
+      margin-top: 16px; text-align: center;
+      font-size: 12px; color: var(--niebla);
+    }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+    /* === FOOTER =================================================== */
+    footer {
+      background: var(--ink); color: var(--cream);
+      padding: clamp(64px, 8vw, 96px) 0 32px;
+    }
+    .ftr-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: var(--gap);
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(245,239,230,.15);
+    }
+    .ftr-brand .logo { color: var(--cream); }
+    .ftr-tag {
+      margin-top: 20px; font-size: 14px;
+      color: rgba(245,239,230,.7); line-height: 1.6;
+      max-width: 320px;
+    }
+    .ftr-col h4 {
+      font-family: var(--sans); font-size: 12px;
+      font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(245,239,230,.5);
+      margin-bottom: 20px; line-height: 1;
+    }
+    .ftr-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .ftr-col a { font-size: 15px; color: var(--cream); transition: color .2s; }
+    .ftr-col a:hover { color: var(--ochre); }
+    .ftr-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 28px; flex-wrap: wrap; gap: 16px;
+    }
+    .ftr-legal { font-size: 12px; color: rgba(245,239,230,.5); }
+    .ftr-social { display: flex; gap: 14px; }
+    .ftr-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(245,239,230,.08);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ftr-social a:hover { background: var(--terracotta); }
+    .ftr-social svg { width: 16px; height: 16px; fill: var(--cream); }
+    @media (max-width: 720px) { .ftr-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 460px) { .ftr-grid { grid-template-columns: 1fr; } }
+
+    /* === MOBILE BOTTOM BAR ======================================== */
+    .mob-bar { display: none; }
+    @media (max-width: 720px) {
+      .mob-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+        background: var(--paper); border-top: 1px solid var(--linea);
+        padding: 8px 4px 14px; z-index: 90;
+      }
+      .mob-bar a {
+        flex: 1; display: flex; flex-direction: column;
+        align-items: center; gap: 3px; font-size: 10px;
+        color: var(--niebla); padding: 6px 0;
+      }
+      .mob-bar a.active { color: var(--terracotta); }
+      .mob-bar svg { width: 22px; height: 22px; }
+      body { padding-bottom: 68px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAV ==================== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="Inicio — Valientes con Maleta">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>Valientes con Maleta</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="/comunidad" class="nav-link">Comunidad</a>
+        <a href="/eventos" class="nav-link">Eventos</a>
+        <a href="/recursos" class="nav-link">Recursos</a>
+        <a href="/blog" class="nav-link">Blog</a>
+        <a href="/podcast" class="nav-link">Podcast</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#unirme" class="btn btn-secondary" style="padding:10px 20px;font-size:14px">Únete a la comunidad</a>
+      </div>
+      <button class="nav-burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-grid">
+          <div>
+            <span class="eyebrow">Sé parte</span>
+            <h1>Llegaste con coraje. <em>Sigue con compañía.</em></h1>
+            <p class="page-hero-sub">Súmate a Valientes con Maleta. Es gratis, es real, y empieza con un mensaje de bienvenida que no es automático — alguien que ya pasó por ahí te recibe.</p>
+            <div class="page-hero-actions">
+              <a href="#unirme" class="btn btn-primary btn-arrow">Unirme ahora</a>
+              <a href="#como-funciona" class="btn btn-secondary">Ver cómo funciona</a>
+            </div>
+            <div class="page-hero-microcopy">
+              Toma 3 minutos · Sin tarjeta de crédito · Cero spam
+            </div>
+          </div>
+          <aside class="hero-card">
+            <div class="hero-card-num">+1.247</div>
+            <div class="hero-card-lbl">personas migrantes en Chile ya forman parte de la comunidad</div>
+            <div class="hero-card-divider"></div>
+            <p class="hero-card-q">Llegué a Antofagasta sin red. La primera persona que me habló de VCM se ofreció a acompañarme al SERMIG. Eso es de lo que se trata.</p>
+            <div class="hero-card-author">
+              <strong>Diego Rivera</strong>
+              Ecuador → Antofagasta · 2025
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BENEFICIOS ==================== -->
+    <section class="benefits">
+      <div class="container" style="padding-top: clamp(64px, 9vw, 120px); padding-bottom: 0;">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Lo que recibes al unirte</span>
+            <h2>Cinco cosas concretas. <span style="color:var(--niebla)">No promesas vagas.</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="padding: 0;">
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="benefit-num">01</div>
+            <h3 class="benefit-title">Bienvenida humana</h3>
+            <p class="benefit-text">Dentro de 7 días, alguien de la comunidad te escribe — no un bot, una persona real con tu mismo proceso. Te pregunta cómo estás, qué te tiene atascada, dónde te vendría bien una mano.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">02</div>
+            <h3 class="benefit-title">Acceso al WhatsApp activo</h3>
+            <p class="benefit-text">El grupo donde se resuelven las dudas reales del día a día — desde "¿este formulario del SII está bien?" hasta "¿alguien sabe dónde validar una libreta de matrimonio?". 700+ miembros activas.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">03</div>
+            <h3 class="benefit-title">Eventos sin costo</h3>
+            <p class="benefit-text">Encuentros mensuales en Santiago, Valparaíso y Antofagasta — más talleres online accesibles desde cualquier ciudad de Chile. La mayoría son gratuitos o con aporte voluntario.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">04</div>
+            <h3 class="benefit-title">Biblioteca de recursos</h3>
+            <p class="benefit-text">Guías paso a paso, plantillas de currículum chileno, checklist de trámites, modelos de carta para arriendos — todo descargable, todo validado por personas que ya lo hicieron.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">05</div>
+            <h3 class="benefit-title">Newsletter útil</h3>
+            <p class="benefit-text">Una vez al mes. El trámite que más nos preguntaron, los próximos eventos en tu ciudad, una historia que te puede sostener. Cero contenido genérico.</p>
+          </div>
+          <div class="benefit" style="background: var(--ink); color: var(--cream);">
+            <div class="benefit-num" style="color: var(--ochre)">06</div>
+            <h3 class="benefit-title" style="color: var(--cream)">Y si más adelante quieres dar</h3>
+            <p class="benefit-text" style="color: rgba(245,239,230,.7)">Cuando ya estés más asentada, podrás escribir en el blog, mentoriar a alguien que recién llegó o ser invitada al podcast. La comunidad se sostiene en ese ciclo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MODOS ==================== -->
+    <section class="section modes" id="colaborar">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Cuatro formas de pertenecer</span>
+            <h2>Hay un lugar para ti — empieces donde empieces.</h2>
+          </div>
+        </div>
+
+        <div class="modes-grid">
+          <article class="mode" data-num="01">
+            <span class="mode-tag">Para quienes recién llegan o están por llegar</span>
+            <h3 class="mode-title">Súmate como miembro</h3>
+            <p class="mode-text">Es la puerta principal. Te da acceso a todo lo de arriba — bienvenida humana, WhatsApp, eventos, recursos, newsletter. Sin costo, sin condiciones.</p>
+            <ul class="mode-list">
+              <li>Bienvenida 1-a-1 en los primeros 7 días</li>
+              <li>Acceso al WhatsApp activo de la comunidad</li>
+              <li>Inscripción prioritaria a eventos en tu ciudad</li>
+              <li>Biblioteca completa de recursos descargables</li>
+            </ul>
+            <div class="mode-cost">Costo: <strong>Gratis</strong> · Tiempo: <strong>3 minutos</strong></div>
+            <a href="#unirme" class="mode-cta">Unirme ahora</a>
+          </article>
+
+          <article class="mode" data-num="02">
+            <span class="mode-tag">Para quienes ya están asentadas</span>
+            <h3 class="mode-title">Mentoriza a quien recién llega</h3>
+            <p class="mode-text">Una hora al mes, para acompañar a alguien que está donde tú estuviste hace dos o tres años. Tú decides el área (trámites, emprendimiento, conciliación, etc.) y la frecuencia.</p>
+            <ul class="mode-list">
+              <li>Match con personas según área y disponibilidad</li>
+              <li>Formación inicial gratuita (1 sesión, 2 horas)</li>
+              <li>Comunidad mensual de mentoras para sostenerse</li>
+              <li>Reconocimiento público en el sitio (opcional)</li>
+            </ul>
+            <div class="mode-cost">Costo: <strong>Gratis</strong> · Compromiso: <strong>1 hora/mes mínimo</strong></div>
+            <a href="mailto:hola@valientesconmaleta.com?subject=Quiero%20ser%20mentor" class="mode-cta">Quiero ser mentor/a</a>
+          </article>
+
+          <article class="mode" data-num="03">
+            <span class="mode-tag">Para quienes tienen historia y voz</span>
+            <h3 class="mode-title">Aporta contenido</h3>
+            <p class="mode-text">Si tienes algo que contar — una historia, una guía, un trámite que descifraste, un punto de vista útil — el blog y el podcast están abiertos a ti. Te acompañamos en la edición y publicación.</p>
+            <ul class="mode-list">
+              <li>Escribir un post para el blog (te ayudamos a editarlo)</li>
+              <li>Ser invitada al podcast "Mujeres que inspiran"</li>
+              <li>Hospedar un evento en tu ciudad</li>
+              <li>Compartir un recurso descargable</li>
+            </ul>
+            <div class="mode-cost">Costo: <strong>Gratis</strong> · Compromiso: <strong>Variable, tú decides</strong></div>
+            <a href="mailto:hola@valientesconmaleta.com?subject=Quiero%20aportar%20contenido" class="mode-cta">Proponer una idea</a>
+          </article>
+
+          <article class="mode" data-num="04">
+            <span class="mode-tag">Para quienes pueden sostener</span>
+            <h3 class="mode-title">Aporta a la causa</h3>
+            <p class="mode-text">Somos 100% independientes — sin financiamiento corporativo ni gubernamental. Cada aporte sostiene los eventos, el alojamiento del sitio, los recursos descargables y las horas de quienes coordinan.</p>
+            <ul class="mode-list">
+              <li>Aporte único desde $5.000 CLP</li>
+              <li>Aporte mensual recurrente desde $3.000 CLP</li>
+              <li>Aporte para empresas que quieren patrocinar</li>
+              <li>Reporte anual transparente de uso de fondos</li>
+            </ul>
+            <div class="mode-cost">Costo: <strong>Tú decides</strong> · 100% va al programa</div>
+            <a href="/aportar" class="mode-cta">Hacer un aporte</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROCESO ==================== -->
+    <section class="process" id="como-funciona">
+      <div class="container">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>De llenar el formulario a tener una <em>red real:</em></h2>
+        <p class="process-intro">No es una membresía con dashboard ni un app que descargar. Es un proceso humano simple, pensado para que en menos de un mes ya tengas conexiones reales en la comunidad.</p>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-num">Paso 01</div>
+            <span class="step-time">3 minutos · Hoy</span>
+            <h3 class="step-title">Llenas el formulario</h3>
+            <p class="step-text">Tu nombre, tu email, tu ciudad en Chile y un par de cosas sobre tu proceso. Esto nos sirve para hacer un buen match.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">Paso 02</div>
+            <span class="step-time">7 días · Esta semana</span>
+            <h3 class="step-title">Recibes una bienvenida</h3>
+            <p class="step-text">Alguien de la comunidad te escribe (no un bot). Pregunta dónde estás, qué necesitas, te invita al WhatsApp.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">Paso 03</div>
+            <span class="step-time">14 días · Próximas dos semanas</span>
+            <h3 class="step-title">Vas a tu primer evento</h3>
+            <p class="step-text">Online o presencial — eliges. Conoces caras nuevas, escuchas historias, encuentras al menos una persona con la que vas a seguir hablando.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">Paso 04</div>
+            <span class="step-time">30 días · Tu primer mes</span>
+            <h3 class="step-title">Ya tienes red</h3>
+            <p class="step-text">Una persona en tu ciudad que ya pasó por lo que pasas, un grupo que responde tus dudas y al menos un recurso que te ahorró tiempo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIOS ==================== -->
+    <section class="testimonios">
+      <div class="container" style="padding-top: clamp(64px, 9vw, 120px); padding-bottom: 0;">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Lo que dicen quienes ya están</span>
+            <h2>Tres voces, una sola lengua: la del que llegó nuevo.</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="padding-left: 0; padding-right: 0; max-width: 100%;">
+        <div class="testimonios-grid">
+          <article class="test">
+            <p class="test-q">El primer mes me ahorré tres viajes innecesarios al Registro Civil porque alguien del WhatsApp me dijo que llevara dos cosas más. Eso, en moneda real, son varias horas de trabajo perdidas.</p>
+            <div class="test-author">
+              <div class="test-avatar" style="background: var(--terracotta)">M</div>
+              <div>
+                <div class="test-author-name">María López</div>
+                <div class="test-author-meta">Venezuela → Santiago · 1 año en VCM</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="test">
+            <p class="test-q">Llevaba dos años en Chile y seguía sintiéndome de visita. Vine a un evento con la idea de "veamos qué tal" y me fui con dos amigas y una idea de negocio que terminé haciendo de verdad.</p>
+            <div class="test-author">
+              <div class="test-avatar" style="background: var(--sage)">D</div>
+              <div>
+                <div class="test-author-name">Diego Rivera</div>
+                <div class="test-author-meta">Ecuador → Antofagasta · 6 meses en VCM</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="test">
+            <p class="test-q">Lo que más valoro es que no se siente caridad. Cuando entras, sientes que estás devolviendo algo aunque no hayas dado nada todavía. Y cuando un día tienes algo que dar, fluye natural.</p>
+            <div class="test-author">
+              <div class="test-avatar" style="background: var(--wine)">Y</div>
+              <div>
+                <div class="test-author-name">Yulieth Hidalgo</div>
+                <div class="test-author-meta">Colombia → Valparaíso · 2 años en VCM</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FORM ==================== -->
+    <section class="section" id="unirme" style="background: var(--cream);">
+      <div class="container">
+        <div class="join-form">
+          <span class="eyebrow">Tu lugar en la comunidad</span>
+          <h3>Súmate ahora — toma 3 minutos.</h3>
+          <p class="join-form-sub">Después de enviar el formulario, una persona real te escribe en menos de 7 días.</p>
+
+          <form onsubmit="event.preventDefault(); alert('Demo — implementar con servicio real (Wix Forms, Tally, Typeform, etc.)');">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="nombre">Cómo te llamas</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-field">
+                <label for="email">Tu email</label>
+                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="ciudad">Tu ciudad en Chile</label>
+                <select id="ciudad" name="ciudad" required>
+                  <option value="">Elige una opción</option>
+                  <option>Santiago</option>
+                  <option>Valparaíso / Viña del Mar</option>
+                  <option>Antofagasta</option>
+                  <option>Concepción</option>
+                  <option>La Serena</option>
+                  <option>Otra ciudad de Chile</option>
+                  <option>Aún no llego — estoy planificando</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="origen">De dónde vienes</label>
+                <input type="text" id="origen" name="origen" placeholder="Ej: Colombia, Venezuela…">
+              </div>
+            </div>
+
+            <div class="form-row" style="grid-template-columns: 1fr;">
+              <div class="form-field">
+                <label for="momento">En qué momento estás</label>
+                <select id="momento" name="momento">
+                  <option value="">Elige el que más te calce</option>
+                  <option>Estoy planificando llegar a Chile</option>
+                  <option>Llegué hace menos de 6 meses</option>
+                  <option>Llevo entre 6 meses y 2 años</option>
+                  <option>Llevo más de 2 años en Chile</option>
+                  <option>Vine, me fui, vine de nuevo</option>
+                </select>
+              </div>
+            </div>
+
+            <label class="form-checkbox">
+              <input type="checkbox" required>
+              <span>Acepto recibir la bienvenida y el newsletter mensual de VCM. Puedo desuscribirme cuando quiera. Más en la <a href="/politica-de-privacidad">política de privacidad</a>.</span>
+            </label>
+
+            <button type="submit" class="form-submit">Unirme a la comunidad →</button>
+            <p class="form-meta">Sin spam · Sin tarjeta · Cero compromiso económico</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="section" style="background: var(--paper); border-top: 1px solid var(--linea);">
+      <div class="container">
+        <div class="faq-grid">
+          <div>
+            <span class="eyebrow">Preguntas frecuentes</span>
+            <h2>Lo que <em style="color:var(--terracotta);font-style:italic">más</em> nos preguntan.</h2>
+            <p style="color: var(--niebla); font-size: 16px; margin-top: 24px; line-height: 1.6;">¿No encuentras lo que buscas? Escríbenos directo a <a href="mailto:hola@valientesconmaleta.com" style="color: var(--terracotta); border-bottom: 1px solid var(--terracotta);">hola@valientesconmaleta.com</a>.</p>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-q">¿De verdad es gratis? ¿Cuál es la trampa?</summary>
+              <div class="faq-a">No hay trampa. La membresía es 100% gratuita y siempre lo será — es parte del compromiso original del proyecto. La comunidad se sostiene con aportes voluntarios de quienes pueden y con talleres pagos que dictamos a empresas. Nunca vamos a ponerte un paywall para acceder al contenido base.</div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-q">¿Tengo que ser mujer para unirme?</summary>
+              <div class="faq-a">No. La comunidad recibe a personas migrantes de cualquier género que estén haciendo vida en Chile o planificando su llegada. La mayoría de eventos son mixtos. Existen también espacios específicos (algunos talleres de mujeres emprendedoras, por ejemplo) que se anuncian claramente como tales.</div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-q">¿Puedo unirme si todavía no llego a Chile?</summary>
+              <div class="faq-a">Sí. De hecho, recomendamos hacerlo — la fase de planificación es donde más útil te será la información de la comunidad. Tendrás acceso al WhatsApp, a los recursos descargables y a una persona de bienvenida que probablemente ya pasó por la misma situación.</div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-q">¿Y si vivo fuera de Santiago?</summary>
+              <div class="faq-a">Tenemos eventos presenciales también en Valparaíso y Antofagasta, y todos los talleres online son accesibles desde cualquier ciudad. Si en tu ciudad no hay evento todavía y quieres ayudar a organizar uno, escríbenos — así nacieron los encuentros de Antofagasta.</div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-q">¿Qué hago si necesito ayuda con un trámite urgente?</summary>
+              <div class="faq-a">Para temas migratorios urgentes, derivamos siempre a profesionales — Servicio Jesuita a Migrantes y la Fundación CREA tienen atención gratuita. La comunidad no reemplaza asesoría legal profesional pero sí puede acompañarte a entender los pasos y prepararte para esa primera reunión.</div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-q">¿Mis datos están seguros?</summary>
+              <div class="faq-a">Solo guardamos los datos necesarios para que alguien pueda escribirte la bienvenida y para enviarte el newsletter. No los compartimos con terceros, no los vendemos, no se usan para publicidad. Puedes pedir su eliminación cuando quieras escribiéndonos.</div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-q">¿Cuánto tiempo tarda la "bienvenida humana"?</summary>
+              <div class="faq-a">Nos comprometemos a que sea dentro de los 7 días. En la práctica, la mayoría recibe contacto en 2 a 4 días. Si pasaron 10 días y no has recibido nada, escríbenos directo — algo se rompió.</div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-q">¿Puedo dejar de ser parte cuando quiera?</summary>
+              <div class="faq-a">Por supuesto. Puedes desuscribirte del newsletter desde cualquier email, salir del WhatsApp cuando quieras y pedir eliminación de tus datos en un mensaje. Nadie te va a perseguir ni a preguntar por qué.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section class="cta-final">
+      <div class="cta-final-inner">
+        <div class="container">
+          <h2>El lugar más difícil de Chile <em>es no conocer a nadie.</em></h2>
+          <p>Eso no se arregla con una guía PDF. Se arregla con una persona, un evento y un grupo de WhatsApp que responde.</p>
+          <a href="#unirme" class="btn btn-arrow">Unirme ahora — 3 minutos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="ftr-grid">
+        <div class="ftr-brand">
+          <div class="logo">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span style="color: var(--cream)">Valientes con Maleta</span>
+          </div>
+          <p class="ftr-tag">La comunidad que acompaña a personas migrantes en Chile en su proceso de inserción, emprendimiento y reconstrucción de identidad.</p>
+        </div>
+        <div class="ftr-col">
+          <h4>Comunidad</h4>
+          <ul>
+            <li><a href="/comunidad">Quiénes somos</a></li>
+            <li><a href="/equipo">El equipo</a></li>
+            <li><a href="/se-parte">Sé parte</a></li>
+            <li><a href="/aportar">Aportar a la causa</a></li>
+          </ul>
+        </div>
+        <div class="ftr-col">
+          <h4>Contenido</h4>
+          <ul>
+            <li><a href="/eventos">Eventos</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/podcast">Podcast</a></li>
+            <li><a href="/recursos">Recursos descargables</a></li>
+          </ul>
+        </div>
+        <div class="ftr-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:hola@valientesconmaleta.com">hola@valientesconmaleta.com</a></li>
+            <li><a href="https://wa.me/56000000000">WhatsApp</a></li>
+            <li><a href="/contacto">Formulario</a></li>
+            <li><a href="/prensa">Prensa & Aliados</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ftr-bottom">
+        <div class="ftr-legal">
+          © 2026 Valientes con Maleta · Hecho en Chile · <a href="/politica-de-privacidad" style="color: rgba(245,239,230,.7)">Política de privacidad</a> · <a href="/terminos" style="color: rgba(245,239,230,.7)">Términos</a>
+        </div>
+        <div class="ftr-social">
+          <a href="https://instagram.com/valientesconmaleta" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.3.6c-.8.3-1.4.7-2 1.3-.6.6-1 1.2-1.3 2C.7 4.6.5 5.4.4 6.7.3 7.9.3 8.3.3 11.6s0 3.6.1 4.9c.1 1.3.3 2.1.6 2.8.3.8.7 1.4 1.3 2 .6.6 1.2 1 2 1.3.7.3 1.5.5 2.8.6 1.2.1 1.6.1 4.9.1s3.6 0 4.9-.1c1.3-.1 2.1-.3 2.8-.6.8-.3 1.4-.7 2-1.3.6-.6 1-1.2 1.3-2 .3-.7.5-1.5.6-2.8.1-1.2.1-1.6.1-4.9s0-3.6-.1-4.9c-.1-1.3-.3-2.1-.6-2.8-.3-.8-.7-1.4-1.3-2-.6-.6-1.2-1-2-1.3C19 .3 18.2.1 16.9.1 15.7 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zM18.4 4.2c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.6-1.4-1.4-1.4z"/></svg></a>
+          <a href="https://youtube.com/@valientesconmaleta" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1.1-1.8-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6c-1 .3-1.8 1.1-2.1 2.1C0 8.2 0 12 0 12s0 3.8.5 5.8c.3 1 1.1 1.8 2.1 2.1 2 .6 9.4.6 9.4.6s7.4 0 9.4-.6c1-.3 1.8-1.1 2.1-2.1.5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+          <a href="https://linkedin.com/company/valientesconmaleta" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.3a1.7 1.7 0 110-3.5 1.7 1.7 0 010 3.5zM19 19h-3v-4.7c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3v-9h2.9v1.2h.1c.4-.8 1.4-1.5 2.8-1.5 3 0 3.5 2 3.5 4.5V19z"/></svg></a>
+          <a href="https://wa.me/56000000000" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.3-.2-.6-.3zM12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.9 1 1-3.8-.2-.4C2.2 15.7 1.7 13.9 1.7 12c0-5.7 4.6-10.3 10.3-10.3S22.3 6.3 22.3 12 17.7 22 12 22z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MOBILE BOTTOM NAV ==================== -->
+  <nav class="mob-bar" aria-label="Navegación móvil">
+    <a href="/">
+      <svg viewBox="0 0 22 22" fill="none"><path d="M3 9.5L11 3l8 6.5V19a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+      Inicio
+    </a>
+    <a href="/eventos">
+      <svg viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="15" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M7 2v4M15 2v4M3 9h16" stroke="currentColor" stroke-width="1.5"/></svg>
+      Eventos
+    </a>
+    <a href="/recursos">
+      <svg viewBox="0 0 22 22" fill="none"><path d="M4 5h14M4 11h14M4 17h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Recursos
+    </a>
+    <a href="/comunidad">
+      <svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M3 13.5h16M11 3a13 13 0 010 16M11 3a13 13 0 000 16" stroke="currentColor" stroke-width="1.5"/></svg>
+      Comunidad
+    </a>
+    <a href="/menu">
+      <svg viewBox="0 0 22 22" fill="none"><circle cx="6" cy="11" r="1.5" fill="currentColor"/><circle cx="11" cy="11" r="1.5" fill="currentColor"/><circle cx="16" cy="11" r="1.5" fill="currentColor"/></svg>
+      Más
+    </a>
+  </nav>
+
+</body>
+</html>

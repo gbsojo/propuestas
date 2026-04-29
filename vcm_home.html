@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valientes con Maleta | Comunidad migrante en Chile</title>
+  <meta name="description" content="Acompañamos a personas migrantes en Chile a navegar trámites, construir red e inventar una nueva vida. Eventos, recursos y comunidad en Santiago, Valparaíso y todo Chile.">
+  <meta property="og:title" content="Valientes con Maleta — Comunidad migrante en Chile">
+  <meta property="og:description" content="La comunidad que acompaña a quienes empiezan de cero en Chile. Información clara, eventos en vivo y gente que ya pasó por ahí.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.valientesconmaleta.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Valientes con Maleta",
+    "url": "https://www.valientesconmaleta.com",
+    "logo": "https://www.valientesconmaleta.com/logo.png",
+    "description": "Comunidad que acompaña a personas migrantes en Chile en su proceso de inserción, emprendimiento y reconstrucción de identidad.",
+    "areaServed": "CL",
+    "sameAs": [
+      "https://www.instagram.com/valientesconmaleta",
+      "https://www.youtube.com/@valientesconmaleta",
+      "https://www.linkedin.com/company/valientesconmaleta"
+    ]
+  }
+  </script>
+  <style>
+    /* === DESIGN TOKENS ============================================= */
+    :root {
+      --ink: #1A1614;
+      --cream: #F5EFE6;
+      --paper: #FFFCF7;
+      --terracotta: #C2522C;
+      --clay: #8C2F1F;
+      --wine: #4A1A2E;
+      --sage: #5C7560;
+      --sage-soft: #DDE4DD;
+      --ochre: #D4A14C;
+      --ochre-soft: #F5E9CF;
+      --niebla: #756A62;
+      --linea: #E5DBCD;
+      --linea-soft: #EFE8DC;
+
+      --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+      --max: 1240px;
+      --gap: clamp(16px, 2vw, 24px);
+      --pad-h: clamp(20px, 5vw, 64px);
+    }
+
+    /* === RESET ==================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--serif);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      font-variation-settings: "opsz" 144, "SOFT" 30;
+    }
+    h1 { font-size: clamp(40px, 7vw, 84px); }
+    h2 { font-size: clamp(30px, 4.5vw, 52px); }
+    h3 { font-size: clamp(20px, 2.4vw, 28px); }
+    p { font-size: 16px; }
+    .lede { font-size: clamp(18px, 1.6vw, 22px); line-height: 1.55; color: var(--ink); }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad-h); }
+
+    /* === BUTTONS ================================================== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 26px; font-weight: 600; font-size: 15px;
+      border-radius: 4px; transition: all .2s ease;
+    }
+    .btn-primary { background: var(--terracotta); color: #fff; }
+    .btn-primary:hover { background: var(--clay); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+    .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+    .btn-ghost { color: #fff; border: 1.5px solid rgba(255,255,255,.5); }
+    .btn-ghost:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+    .btn-arrow::after { content: "→"; font-family: var(--sans); transition: transform .2s; }
+    .btn-arrow:hover::after { transform: translateX(3px); }
+
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px; font-size: 12px;
+      font-weight: 500; letter-spacing: .02em;
+    }
+    .pill-sage { background: var(--sage-soft); color: var(--sage); }
+    .pill-ochre { background: var(--ochre-soft); color: #8B5E10; }
+    .pill-cream { background: rgba(255,255,255,.18); color: #fff; backdrop-filter: blur(8px); }
+
+    .eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 14px;
+    }
+
+    /* === NAV ====================================================== */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245, 239, 230, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--linea);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px; max-width: var(--max); margin: 0 auto;
+      padding: 0 var(--pad-h);
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--serif); font-weight: 600;
+      font-size: 19px; letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .logo-mark {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--terracotta); position: relative;
+      flex-shrink: 0;
+    }
+    .logo-mark::after {
+      content: ""; position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px; height: 9px;
+      border: 2px solid var(--paper); border-bottom: 0;
+      border-radius: 14px 14px 0 0;
+    }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-link {
+      font-size: 14px; font-weight: 500; color: var(--ink);
+      position: relative; padding: 4px 0;
+    }
+    .nav-link::after {
+      content: ""; position: absolute; left: 0; bottom: -2px;
+      width: 0; height: 1.5px; background: var(--terracotta);
+      transition: width .25s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link.active { color: var(--terracotta); }
+    .nav-cta { display: flex; gap: 12px; align-items: center; }
+    .nav-burger {
+      display: none; flex-direction: column; gap: 5px;
+      padding: 8px;
+    }
+    .nav-burger span {
+      width: 22px; height: 1.5px; background: var(--ink);
+      display: block; transition: .2s;
+    }
+
+    @media (max-width: 920px) {
+      .nav-links, .nav-cta .btn-secondary { display: none; }
+      .nav-burger { display: flex; }
+    }
+
+    /* === HERO ===================================================== */
+    .hero {
+      padding: clamp(56px, 9vw, 120px) 0 clamp(64px, 9vw, 100px);
+      position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: clamp(24px, 5vw, 80px);
+      align-items: center;
+    }
+    .hero-h1 {
+      font-size: clamp(40px, 7.2vw, 88px);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+      font-variation-settings: "opsz" 144, "SOFT" 50;
+    }
+    .hero-h1 em {
+      font-style: italic; color: var(--terracotta);
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .hero-sub {
+      font-size: clamp(17px, 1.5vw, 20px);
+      line-height: 1.55; color: var(--niebla);
+      max-width: 540px; margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .hero-proof {
+      display: flex; align-items: center; gap: 14px;
+      margin-top: 36px; padding-top: 28px;
+      border-top: 1px solid var(--linea);
+      max-width: 460px;
+    }
+    .proof-avatars { display: flex; }
+    .proof-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid var(--cream);
+      margin-left: -10px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: #fff;
+    }
+    .proof-avatar:first-child { margin-left: 0; }
+    .proof-text { font-size: 13px; color: var(--niebla); line-height: 1.4; }
+    .proof-text strong { color: var(--ink); display: block; font-size: 14px; }
+
+    .hero-image {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(at 20% 20%, rgba(212,161,76,.22), transparent 40%),
+        radial-gradient(at 80% 70%, rgba(74,26,46,.5), transparent 50%),
+        linear-gradient(135deg, var(--terracotta) 0%, var(--clay) 50%, var(--wine) 100%);
+    }
+    .hero-image::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(45deg, transparent 0 20px, rgba(255,255,255,.03) 20px 21px);
+    }
+    .hero-tag {
+      position: absolute; top: 24px; left: 24px;
+    }
+    .hero-quote {
+      position: absolute; bottom: 28px; left: 28px; right: 28px;
+      color: rgba(255,255,255,.95);
+    }
+    .hero-quote-mark {
+      font-family: var(--serif); font-size: 64px;
+      line-height: .8; color: var(--ochre); margin-bottom: 8px;
+    }
+    .hero-quote-text {
+      font-family: var(--serif); font-size: 22px; font-weight: 500;
+      line-height: 1.3; letter-spacing: -0.01em;
+      font-style: italic;
+    }
+    .hero-quote-author {
+      margin-top: 14px; font-size: 12px;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(255,255,255,.75);
+    }
+
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-image { aspect-ratio: 3/4; max-height: 540px; }
+    }
+
+    /* === MANIFIESTO =============================================== */
+    .manifesto {
+      background: var(--ink); color: var(--cream);
+      padding: clamp(64px, 9vw, 110px) 0;
+      text-align: center;
+    }
+    .manifesto h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(26px, 3.5vw, 44px);
+      max-width: 920px; margin: 0 auto;
+      letter-spacing: -0.015em;
+    }
+    .manifesto h2 em {
+      font-style: italic; color: var(--ochre);
+    }
+    .manifesto-line {
+      width: 40px; height: 1px; background: var(--terracotta);
+      margin: 32px auto;
+    }
+    .manifesto-byline {
+      font-size: 12px; letter-spacing: .14em;
+      text-transform: uppercase; color: rgba(245,239,230,.55);
+    }
+
+    /* === SECTIONS COMUNES ========================================= */
+    section.section {
+      padding: clamp(64px, 9vw, 120px) 0;
+    }
+    .section-head {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 24px; margin-bottom: 48px; flex-wrap: wrap;
+    }
+    .section-head h2 { max-width: 700px; }
+    .section-link {
+      font-size: 14px; font-weight: 600; color: var(--terracotta);
+      border-bottom: 1.5px solid var(--terracotta);
+      padding-bottom: 2px;
+    }
+    .section-link:hover { color: var(--clay); border-color: var(--clay); }
+
+    /* === EVENTOS ================================================== */
+    .events {
+      background: var(--paper);
+      border-top: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+    }
+    .events-filter {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .filter-chip {
+      padding: 8px 18px; font-size: 13px; font-weight: 500;
+      border-radius: 999px; border: 1px solid var(--linea);
+      color: var(--niebla); background: transparent;
+      transition: .2s;
+    }
+    .filter-chip.active, .filter-chip:hover {
+      background: var(--ink); color: var(--cream); border-color: var(--ink);
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--linea);
+    }
+    .event {
+      padding: 32px 28px;
+      border-right: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+      transition: background .2s;
+      position: relative;
+      cursor: pointer;
+    }
+    .event:hover { background: var(--cream); }
+    .event-date {
+      font-family: var(--serif); font-weight: 500;
+      font-size: 14px; letter-spacing: .04em;
+      color: var(--terracotta); text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .event-day {
+      font-family: var(--serif); font-size: 56px;
+      font-weight: 500; line-height: 1;
+      color: var(--ink); margin-bottom: 16px;
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .event-tag {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 12px;
+    }
+    .event-title {
+      font-family: var(--serif); font-size: 22px; font-weight: 500;
+      line-height: 1.2; margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .event-meta {
+      font-size: 13px; color: var(--niebla);
+      line-height: 1.5; margin-bottom: 24px;
+    }
+    .event-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; color: var(--ink);
+    }
+    .event-cta::after {
+      content: "→"; transition: transform .2s;
+    }
+    .event:hover .event-cta::after { transform: translateX(4px); }
+    .event-stat {
+      position: absolute; top: 32px; right: 28px;
+      font-size: 11px; font-weight: 600; color: var(--niebla);
+      letter-spacing: .04em;
+    }
+    .event-stat.full { color: var(--clay); }
+
+    /* === RECURSOS POR CATEGORÍA =================================== */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--gap);
+    }
+    .resource {
+      padding: 36px 28px;
+      background: var(--paper);
+      border: 1px solid var(--linea);
+      transition: .25s;
+      display: flex; flex-direction: column;
+      min-height: 240px;
+    }
+    .resource:hover {
+      background: var(--ink); color: var(--cream);
+      border-color: var(--ink);
+      transform: translateY(-4px);
+    }
+    .resource:hover .resource-num,
+    .resource:hover .resource-link { color: var(--ochre); }
+    .resource:hover .resource-meta { color: rgba(245,239,230,.7); }
+    .resource-num {
+      font-family: var(--serif); font-size: 13px;
+      color: var(--terracotta); font-weight: 500;
+      letter-spacing: .04em; margin-bottom: 32px;
+      transition: .2s;
+    }
+    .resource-title {
+      font-family: var(--serif); font-size: 24px;
+      font-weight: 500; line-height: 1.15;
+      margin-bottom: 12px; letter-spacing: -0.01em;
+    }
+    .resource-meta {
+      font-size: 13px; color: var(--niebla);
+      margin-top: auto;
+      transition: .2s;
+    }
+    .resource-link {
+      display: inline-block; margin-top: 14px;
+      font-size: 13px; font-weight: 600; color: var(--terracotta);
+      transition: .2s;
+    }
+
+    /* === PILARES (4) ============================================== */
+    .pillars {
+      background: var(--wine); color: var(--cream);
+    }
+    .pillars .eyebrow { color: var(--ochre); }
+    .pillars h2 { color: var(--cream); }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      margin-top: 56px;
+    }
+    .pillar {
+      padding: 36px 28px;
+      border-right: 1px solid rgba(245,239,230,.12);
+      border-bottom: 1px solid rgba(245,239,230,.12);
+    }
+    .pillar:last-child { border-right: 0; }
+    .pillar-num {
+      font-family: var(--serif); font-size: 13px;
+      color: var(--ochre); margin-bottom: 24px;
+      letter-spacing: .04em;
+    }
+    .pillar-title {
+      font-family: var(--serif); font-size: 26px;
+      font-weight: 500; margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .pillar-text {
+      font-size: 14px; color: rgba(245,239,230,.78);
+      line-height: 1.6;
+    }
+    @media (max-width: 700px) {
+      .pillar { border-right: 0; }
+    }
+
+    /* === VOCES =================================================== */
+    .voices {
+      background: var(--cream);
+    }
+    .voices-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 0;
+      border: 1px solid var(--linea);
+      background: var(--paper);
+    }
+    .voice-feat {
+      padding: clamp(36px, 5vw, 64px);
+      border-right: 1px solid var(--linea);
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      min-height: 380px;
+    }
+    .voice-feat-q {
+      font-family: var(--serif); font-style: italic;
+      font-size: clamp(22px, 2.4vw, 32px);
+      line-height: 1.3; font-weight: 400;
+      letter-spacing: -0.01em; margin-bottom: 32px;
+    }
+    .voice-feat-q::before {
+      content: """; font-family: var(--serif);
+      color: var(--terracotta); font-size: 1.6em;
+      line-height: 0; margin-right: 4px;
+      vertical-align: -0.3em;
+    }
+    .voice-author { display: flex; align-items: center; gap: 14px; }
+    .voice-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--terracotta); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-weight: 600; font-size: 18px;
+      flex-shrink: 0;
+    }
+    .voice-author-name { font-weight: 600; font-size: 15px; }
+    .voice-author-meta { font-size: 13px; color: var(--niebla); }
+
+    .voice-list {
+      display: flex; flex-direction: column;
+    }
+    .voice-mini {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--linea);
+      flex: 1;
+    }
+    .voice-mini:last-child { border-bottom: 0; }
+    .voice-mini-q {
+      font-family: var(--serif); font-style: italic;
+      font-size: 16px; line-height: 1.4;
+      margin-bottom: 14px;
+    }
+    .voice-mini-author {
+      font-size: 12px; color: var(--niebla);
+    }
+    .voice-mini-author strong { color: var(--ink); display: inline-block; }
+
+    @media (max-width: 820px) {
+      .voices-grid { grid-template-columns: 1fr; }
+      .voice-feat { border-right: 0; border-bottom: 1px solid var(--linea); }
+    }
+
+    /* === PODCAST FEATURED ========================================= */
+    .podcast {
+      background: var(--paper);
+      border-top: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+    }
+    .podcast-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
+    }
+    .podcast-art {
+      aspect-ratio: 1;
+      background:
+        radial-gradient(at 30% 30%, rgba(212,161,76,.4), transparent 50%),
+        linear-gradient(150deg, var(--sage) 0%, var(--wine) 80%);
+      position: relative;
+      max-width: 460px;
+    }
+    .podcast-art::after {
+      content: ""; position: absolute; inset: 12%;
+      border: 1.5px solid rgba(255,255,255,.25);
+      border-radius: 50%;
+    }
+    .podcast-play {
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 76px; height: 76px; border-radius: 50%;
+      background: var(--terracotta);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .podcast-play svg { width: 22px; height: 22px; margin-left: 4px; }
+    .podcast-content .eyebrow { color: var(--terracotta); }
+    .podcast-meta { display: flex; gap: 24px; margin-bottom: 14px; font-size: 13px; color: var(--niebla); }
+    .podcast-meta strong { color: var(--ink); font-weight: 600; }
+    .podcast-progress {
+      margin: 32px 0; display: flex; align-items: center; gap: 14px;
+    }
+    .podcast-progress-bar {
+      flex: 1; height: 3px; background: var(--linea);
+      position: relative;
+    }
+    .podcast-progress-fill {
+      position: absolute; left: 0; top: 0; height: 100%;
+      width: 28%; background: var(--terracotta);
+    }
+    .podcast-time { font-size: 12px; color: var(--niebla); font-variant-numeric: tabular-nums; }
+    .podcast-platforms {
+      display: flex; gap: 16px; margin-top: 8px;
+      font-size: 13px; color: var(--niebla);
+    }
+    .podcast-platforms a:hover { color: var(--terracotta); }
+
+    @media (max-width: 760px) {
+      .podcast-grid { grid-template-columns: 1fr; }
+      .podcast-art { max-width: 320px; margin: 0 auto; }
+    }
+
+    /* === STATS / IMPACTO ========================================== */
+    .stats {
+      padding: clamp(48px, 6vw, 80px) 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--linea);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0;
+    }
+    .stat {
+      padding: 24px;
+      text-align: center;
+      border-right: 1px solid var(--linea);
+    }
+    .stat:last-child { border-right: 0; }
+    .stat-num {
+      font-family: var(--serif); font-size: clamp(48px, 6vw, 72px);
+      font-weight: 500; line-height: 1; color: var(--terracotta);
+      letter-spacing: -0.02em;
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .stat-num span { font-size: .55em; color: var(--niebla); }
+    .stat-lbl {
+      font-size: 13px; color: var(--niebla);
+      margin-top: 12px; letter-spacing: .02em;
+    }
+    @media (max-width: 600px) {
+      .stat { border-right: 0; border-bottom: 1px solid var(--linea); padding: 20px 0; }
+      .stat:last-child { border-bottom: 0; }
+    }
+
+    /* === BLOG TEASER ============================================== */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: var(--gap);
+    }
+    .post {
+      padding: 32px 0;
+      border-top: 1px solid var(--ink);
+      display: flex; flex-direction: column;
+    }
+    .post-feat {
+      grid-row: span 2;
+      padding: 0;
+      border-top: 0;
+      background: var(--ink); color: var(--cream);
+      display: flex; flex-direction: column;
+    }
+    .post-feat-img {
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, var(--clay), var(--wine));
+      position: relative;
+    }
+    .post-feat-img::after {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(at 70% 30%, rgba(212,161,76,.3), transparent 50%);
+    }
+    .post-feat-body {
+      padding: 36px 32px; flex: 1;
+      display: flex; flex-direction: column;
+    }
+    .post-feat-body .post-cat,
+    .post-feat-body .post-meta { color: rgba(245,239,230,.6); }
+    .post-feat-body .post-cat { color: var(--ochre); }
+    .post-feat-body .post-title {
+      color: var(--cream);
+    }
+    .post-cat {
+      font-size: 11px; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+    .post-title {
+      font-family: var(--serif); font-size: clamp(20px, 2vw, 26px);
+      font-weight: 500; line-height: 1.2;
+      letter-spacing: -0.01em; margin-bottom: 12px;
+    }
+    .post-feat-body .post-title { font-size: clamp(26px, 3vw, 36px); }
+    .post-excerpt {
+      font-size: 14px; color: var(--niebla);
+      line-height: 1.6; margin-bottom: 20px;
+    }
+    .post-feat-body .post-excerpt {
+      color: rgba(245,239,230,.78); font-size: 15px;
+    }
+    .post-meta {
+      font-size: 12px; color: var(--niebla);
+      margin-top: auto;
+    }
+    .post-meta strong { color: var(--ink); }
+
+    @media (max-width: 880px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .post-feat { grid-row: auto; }
+    }
+
+    /* === NEWSLETTER =============================================== */
+    .nl {
+      background: var(--terracotta); color: #fff;
+      padding: clamp(64px, 9vw, 110px) 0;
+    }
+    .nl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 80px);
+      align-items: center;
+    }
+    .nl h2 {
+      color: #fff;
+      font-weight: 400;
+      font-size: clamp(30px, 4vw, 48px);
+    }
+    .nl h2 em {
+      font-style: italic; color: var(--ochre-soft);
+    }
+    .nl p {
+      color: rgba(255,255,255,.85);
+      font-size: 17px; line-height: 1.55;
+      margin-bottom: 28px;
+    }
+    .nl-form {
+      display: flex; gap: 0;
+      max-width: 460px;
+      border-bottom: 1.5px solid #fff;
+    }
+    .nl-input {
+      flex: 1; background: transparent; border: 0;
+      color: #fff; font-size: 16px; padding: 14px 4px;
+      outline: none;
+    }
+    .nl-input::placeholder { color: rgba(255,255,255,.55); }
+    .nl-btn {
+      padding: 14px 18px; color: #fff; font-weight: 600;
+      font-size: 15px;
+    }
+    .nl-meta {
+      margin-top: 20px; font-size: 12px;
+      color: rgba(255,255,255,.7);
+    }
+    .nl-content { color: #fff; }
+    .nl-perks { display: flex; flex-direction: column; gap: 16px; }
+    .nl-perk {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,.18);
+    }
+    .nl-perk:last-child { border-bottom: 0; padding-bottom: 0; }
+    .nl-perk-num {
+      font-family: var(--serif); font-size: 18px;
+      width: 32px; flex-shrink: 0; color: var(--ochre-soft);
+    }
+    .nl-perk-text { font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.92); }
+    .nl-perk-text strong { display: block; margin-bottom: 2px; color: #fff; }
+
+    @media (max-width: 800px) { .nl-grid { grid-template-columns: 1fr; } }
+
+    /* === FOOTER =================================================== */
+    footer {
+      background: var(--ink); color: var(--cream);
+      padding: clamp(64px, 8vw, 96px) 0 32px;
+    }
+    .ftr-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: var(--gap);
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(245,239,230,.15);
+    }
+    .ftr-brand .logo { color: var(--cream); }
+    .ftr-brand .logo-mark { background: var(--terracotta); }
+    .ftr-tag {
+      margin-top: 20px; font-size: 14px;
+      color: rgba(245,239,230,.7); line-height: 1.6;
+      max-width: 320px;
+    }
+    .ftr-col h4 {
+      font-family: var(--sans); font-size: 12px;
+      font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(245,239,230,.5);
+      margin-bottom: 20px; line-height: 1;
+    }
+    .ftr-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .ftr-col a {
+      font-size: 15px; color: var(--cream);
+      transition: color .2s;
+    }
+    .ftr-col a:hover { color: var(--ochre); }
+    .ftr-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 28px; flex-wrap: wrap; gap: 16px;
+    }
+    .ftr-legal {
+      font-size: 12px; color: rgba(245,239,230,.5);
+    }
+    .ftr-social { display: flex; gap: 14px; }
+    .ftr-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(245,239,230,.08);
+      display: flex; align-items: center; justify-content: center;
+      transition: .2s;
+    }
+    .ftr-social a:hover {
+      background: var(--terracotta);
+    }
+    .ftr-social svg { width: 16px; height: 16px; fill: var(--cream); }
+    @media (max-width: 720px) {
+      .ftr-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 460px) {
+      .ftr-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === MOBILE-ONLY BOTTOM BAR =================================== */
+    .mob-bar { display: none; }
+    @media (max-width: 720px) {
+      .mob-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+        background: var(--paper); border-top: 1px solid var(--linea);
+        padding: 8px 4px 14px; z-index: 90;
+      }
+      .mob-bar a {
+        flex: 1; display: flex; flex-direction: column;
+        align-items: center; gap: 3px; font-size: 10px;
+        color: var(--niebla); padding: 6px 0;
+      }
+      .mob-bar a.active { color: var(--terracotta); }
+      .mob-bar svg { width: 22px; height: 22px; }
+      body { padding-bottom: 68px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAV ==================== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="Inicio — Valientes con Maleta">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>Valientes con Maleta</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="/" class="nav-link active">Inicio</a>
+        <a href="/comunidad" class="nav-link">Comunidad</a>
+        <a href="/eventos" class="nav-link">Eventos</a>
+        <a href="/recursos" class="nav-link">Recursos</a>
+        <a href="/blog" class="nav-link">Blog</a>
+        <a href="/podcast" class="nav-link">Podcast</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="/se-parte" class="btn btn-secondary" style="padding:10px 20px;font-size:14px">Únete a la comunidad</a>
+      </div>
+      <button class="nav-burger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="pill pill-sage">
+              <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor"/></svg>
+              Comunidad activa en Chile
+            </span>
+            <h1 class="hero-h1" style="margin-top:20px">
+              Empezar de cero<br>en Chile no se hace<br><em>en soledad.</em>
+            </h1>
+            <p class="hero-sub">
+              Valientes con Maleta es la comunidad que acompaña a personas migrantes en Chile a navegar trámites, construir red e inventar una nueva vida — con información clara y gente que ya pasó por ahí.
+            </p>
+            <div class="hero-actions">
+              <a href="/se-parte" class="btn btn-primary btn-arrow">Únete a la comunidad</a>
+              <a href="#como-funciona" class="btn btn-secondary">Cómo funciona</a>
+            </div>
+            <div class="hero-proof">
+              <div class="proof-avatars" aria-hidden="true">
+                <span class="proof-avatar" style="background:var(--terracotta)">ML</span>
+                <span class="proof-avatar" style="background:var(--sage)">JP</span>
+                <span class="proof-avatar" style="background:var(--wine)">KL</span>
+                <span class="proof-avatar" style="background:var(--ochre);color:var(--ink)">+</span>
+              </div>
+              <div class="proof-text">
+                <strong>+1.200 personas valientes</strong>
+                ya forman parte de la comunidad
+              </div>
+            </div>
+          </div>
+          <div class="hero-image" role="img" aria-label="Comunidad de personas migrantes en Chile compartiendo en un evento">
+            <span class="pill pill-cream hero-tag">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1l1.5 3 3 .5-2.2 2 .6 3.2L6 8.2 3 9.7l.6-3.2L1.5 4.5l3-.5L6 1z" fill="currentColor"/></svg>
+              Una de nosotras
+            </span>
+            <div class="hero-quote">
+              <div class="hero-quote-mark">"</div>
+              <div class="hero-quote-text">Llegué sin conocer a nadie. Hoy mi negocio existe porque alguien de VCM me prestó su contabilidad para empezar.</div>
+              <div class="hero-quote-author">Camila R. · Colombia → Santiago · 2 años en Chile</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MANIFIESTO ==================== -->
+    <section class="manifesto" id="como-funciona">
+      <div class="container">
+        <h2>
+          Migrar es un acto de coraje. Hacerlo en compañía, <em>una decisión que cambia todo.</em>
+        </h2>
+        <div class="manifesto-line" aria-hidden="true"></div>
+        <p class="manifesto-byline">El compromiso de Valientes con Maleta</p>
+      </div>
+    </section>
+
+    <!-- ==================== EVENTOS ==================== -->
+    <section class="section events">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Próximos eventos</span>
+            <h2>Encuentros que conectan, transforman y abren puertas.</h2>
+          </div>
+          <a href="/eventos" class="section-link">Ver calendario completo</a>
+        </div>
+
+        <div class="events-filter" role="tablist" aria-label="Filtrar eventos por ciudad">
+          <button class="filter-chip active" role="tab" aria-selected="true">Todos</button>
+          <button class="filter-chip" role="tab">Santiago</button>
+          <button class="filter-chip" role="tab">Valparaíso</button>
+          <button class="filter-chip" role="tab">Antofagasta</button>
+          <button class="filter-chip" role="tab">Online</button>
+        </div>
+
+        <div class="events-grid">
+          <article class="event">
+            <div class="event-stat">12 plazas</div>
+            <div class="event-date">Jueves, mayo</div>
+            <div class="event-day">14</div>
+            <span class="event-tag">· Networking</span>
+            <h3 class="event-title">Mujeres que lideran: encuentro Santiago</h3>
+            <div class="event-meta">Providencia, Santiago · 18:30 — 21:00<br>Presencial · Aporte voluntario</div>
+            <a href="/eventos/mujeres-que-lideran-mayo" class="event-cta">Reservar plaza</a>
+          </article>
+
+          <article class="event">
+            <div class="event-stat">Cupo libre</div>
+            <div class="event-date">Sábado, mayo</div>
+            <div class="event-day">23</div>
+            <span class="event-tag">· Taller online</span>
+            <h3 class="event-title">RUT, SERMIG y primeros trámites en Chile</h3>
+            <div class="event-meta">Online por Zoom · 11:00 — 12:30<br>Gratuito · 350 personas inscritas</div>
+            <a href="/eventos/tramites-llegar-chile" class="event-cta">Reservar plaza</a>
+          </article>
+
+          <article class="event">
+            <div class="event-stat">8 plazas</div>
+            <div class="event-date">Miércoles, junio</div>
+            <div class="event-day">04</div>
+            <span class="event-tag">· Mentoría grupal</span>
+            <h3 class="event-title">Finanzas para emprender en Chile</h3>
+            <div class="event-meta">Valparaíso · Híbrido · 17:00<br>Aporte voluntario · Con Katherine León</div>
+            <a href="/eventos/finanzas-emprender-junio" class="event-cta">Reservar plaza</a>
+          </article>
+
+          <article class="event">
+            <div class="event-stat">Acceso libre</div>
+            <div class="event-date">Lunes, junio</div>
+            <div class="event-day">16</div>
+            <span class="event-tag">· Charla abierta</span>
+            <h3 class="event-title">Convalidar tu título universitario en Chile</h3>
+            <div class="event-meta">Online · YouTube Live · 19:00<br>Gratuito · Con preguntas en vivo</div>
+            <a href="/eventos/convalidar-titulo-junio" class="event-cta">Reservar plaza</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== RECURSOS ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Empieza por aquí</span>
+            <h2>Las preguntas que más nos hicimos al llegar — respondidas.</h2>
+          </div>
+          <a href="/recursos" class="section-link">Ver todos los recursos</a>
+        </div>
+
+        <div class="resources-grid">
+          <a href="/blog/tramites-legalidad" class="resource">
+            <span class="resource-num">01 / Trámites & Legalidad</span>
+            <h3 class="resource-title">Residencia, RUT y SERMIG</h3>
+            <p class="resource-meta">12 guías paso a paso</p>
+            <span class="resource-link">Empezar →</span>
+          </a>
+          <a href="/blog/insercion-laboral" class="resource">
+            <span class="resource-num">02 / Inserción laboral</span>
+            <h3 class="resource-title">Encontrar trabajo en Chile</h3>
+            <p class="resource-meta">Convalidación, redes, sectores</p>
+            <span class="resource-link">Empezar →</span>
+          </a>
+          <a href="/blog/emprendimiento" class="resource">
+            <span class="resource-num">03 / Emprendimiento</span>
+            <h3 class="resource-title">Emprender siendo extranjera</h3>
+            <p class="resource-meta">Del SII al Sello Migrante</p>
+            <span class="resource-link">Empezar →</span>
+          </a>
+          <a href="/blog/finanzas" class="resource">
+            <span class="resource-num">04 / Finanzas</span>
+            <h3 class="resource-title">Bancos, AFP y remesas</h3>
+            <p class="resource-meta">Cómo manejar tu dinero</p>
+            <span class="resource-link">Empezar →</span>
+          </a>
+          <a href="/blog/vida-practica" class="resource">
+            <span class="resource-num">05 / Vida práctica</span>
+            <h3 class="resource-title">Salud, arriendo y educación</h3>
+            <p class="resource-meta">FONASA, CESFAM, escuelas</p>
+            <span class="resource-link">Empezar →</span>
+          </a>
+          <a href="/blog/bienestar" class="resource">
+            <span class="resource-num">06 / Bienestar</span>
+            <h3 class="resource-title">Duelo migratorio y salud mental</h3>
+            <p class="resource-meta">Acompañado por psicólogas</p>
+            <span class="resource-link">Empezar →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PILARES ==================== -->
+    <section class="section pillars">
+      <div class="container">
+        <div style="max-width: 760px">
+          <span class="eyebrow">Lo que nos sostiene</span>
+          <h2>Cuatro principios que guían cada evento, cada conversación, cada decisión.</h2>
+        </div>
+        <div class="pillars-grid">
+          <div class="pillar">
+            <div class="pillar-num">01</div>
+            <h3 class="pillar-title">Pertenencia</h3>
+            <p class="pillar-text">Cada persona que llega encuentra a alguien que entiende su proceso. Nadie pasa por la migración a oscuras.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">02</div>
+            <h3 class="pillar-title">Valor tangible</h3>
+            <p class="pillar-text">Cada interacción deja algo concreto: un trámite resuelto, un contacto útil, una claridad nueva sobre el siguiente paso.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">03</div>
+            <h3 class="pillar-title">Progreso visible</h3>
+            <p class="pillar-text">Tu camino se ve. Eventos a los que asististe, personas que conociste, metas que cumpliste — la migración como crecimiento, no como pérdida.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">04</div>
+            <h3 class="pillar-title">Voz propia</h3>
+            <p class="pillar-text">Quienes recibieron acompañamiento un día, mañana son quienes acompañan. La comunidad se sostiene contando, escribiendo, hospedando, escuchando.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VOCES ==================== -->
+    <section class="section voices">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Voces de la comunidad</span>
+            <h2>Tres historias, una sola lengua: la del que llegó nuevo.</h2>
+          </div>
+          <a href="/comunidad" class="section-link">Conocer a más miembros</a>
+        </div>
+
+        <div class="voices-grid">
+          <div class="voice-feat">
+            <p class="voice-feat-q">Encontré en VCM lo que buscaba desde que llegué a Santiago: personas que entienden lo que es empezar de cero. No es lo mismo que te lo cuenten a que te lo digan mirándote a los ojos.</p>
+            <div class="voice-author">
+              <div class="voice-avatar" aria-hidden="true">M</div>
+              <div>
+                <div class="voice-author-name">María López</div>
+                <div class="voice-author-meta">Venezuela → Santiago · Llegada en 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="voice-list">
+            <div class="voice-mini">
+              <p class="voice-mini-q">"Vine siguiendo a mi pareja. Hoy mi cafetería en Ñuñoa existe porque la red estuvo ahí cuando no entendía ni el SII."</p>
+              <div class="voice-mini-author"><strong>Pao Nardin</strong> — Argentina → Santiago</div>
+            </div>
+            <div class="voice-mini">
+              <p class="voice-mini-q">"Llegué con título de ingeniera y me costó dos años entender qué hacer con él. La guía de convalidación me ahorró el tercero."</p>
+              <div class="voice-mini-author"><strong>Yulieth Hidalgo</strong> — Colombia → Valparaíso</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STATS ==================== -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-num">1.247</div>
+            <div class="stat-lbl">Personas en la comunidad</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">11<span> países</span></div>
+            <div class="stat-lbl">Origen de nuestros miembros</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">48</div>
+            <div class="stat-lbl">Eventos realizados en 2025</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">93<span>%</span></div>
+            <div class="stat-lbl">Recomendaría VCM a otra persona migrante</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PODCAST ==================== -->
+    <section class="section podcast">
+      <div class="container">
+        <div class="podcast-grid">
+          <div class="podcast-art" role="img" aria-label="Carátula del episodio del podcast Mujeres que inspiran">
+            <button class="podcast-play" aria-label="Reproducir episodio 12">
+              <svg viewBox="0 0 14 14" fill="#fff"><path d="M3 1.5l9 5.5-9 5.5V1.5z"/></svg>
+            </button>
+          </div>
+          <div class="podcast-content">
+            <span class="eyebrow">Mujeres que inspiran · El podcast de VCM</span>
+            <h2 style="font-size:clamp(28px, 3.6vw, 44px); margin-bottom: 20px">Construir identidad lejos de casa.</h2>
+            <div class="podcast-meta">
+              <span><strong>Ep. 12</strong></span>
+              <span>Con Jarka Paprnáková</span>
+              <span>38 min</span>
+            </div>
+            <p style="color: var(--niebla); margin-bottom: 28px">Una conversación honesta sobre cómo se reconstruye la identidad cuando uno cruza una frontera — el duelo, las lealtades divididas y el espacio nuevo que se abre.</p>
+            <div class="podcast-progress">
+              <div class="podcast-progress-bar"><div class="podcast-progress-fill"></div></div>
+              <span class="podcast-time">10:42 / 38:00</span>
+            </div>
+            <div class="podcast-platforms">
+              <a href="#">Spotify ↗</a>
+              <a href="#">Apple Podcasts ↗</a>
+              <a href="#">YouTube ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BLOG TEASER ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Desde el blog</span>
+            <h2>Las preguntas reales, contadas por quienes ya las respondieron.</h2>
+          </div>
+          <a href="/blog" class="section-link">Ver todo el blog</a>
+        </div>
+
+        <div class="blog-grid">
+          <article class="post post-feat">
+            <div class="post-feat-img"></div>
+            <div class="post-feat-body">
+              <span class="post-cat">Trámites & Legalidad</span>
+              <h3 class="post-title">Residencia temporal en Chile: qué es, cómo solicitarla y qué documentos necesitas</h3>
+              <p class="post-excerpt">Guía paso a paso del permiso bajo la Ley 21.325, plataforma SERMIG, documentos requeridos, tiempos reales de respuesta y qué hacer si tu solicitud se demora — el post más buscado por quienes recién llegan.</p>
+              <div class="post-meta">Por <strong style="color:var(--ochre)">Equipo VCM</strong> · 28 abril · 7 min lectura</div>
+            </div>
+          </article>
+
+          <article class="post">
+            <span class="post-cat">Historia real</span>
+            <h3 class="post-title">Llegué a Santiago sin conocer a nadie y armé mi negocio desde cero.</h3>
+            <p class="post-excerpt">Los primeros meses, el primer cliente, los trámites — y lo que la comunidad significó cuando ya no tenía red familiar a la que llamar.</p>
+            <div class="post-meta">Por <strong>Pao Nardin</strong> · 12 marzo · 5 min lectura</div>
+          </article>
+
+          <article class="post">
+            <span class="post-cat">Emprendimiento</span>
+            <h3 class="post-title">5 errores al formalizar tu emprendimiento en Chile (y cómo evitarlos).</h3>
+            <p class="post-excerpt">No separar finanzas personales del negocio, facturar sin RUT vigente, elegir el giro equivocado — los errores que más vimos repetir y la manera concreta de salir adelante.</p>
+            <div class="post-meta">Por <strong>Katherine León</strong> · 5 abril · 4 min lectura</div>
+          </article>
+
+          <article class="post">
+            <span class="post-cat">Bienestar</span>
+            <h3 class="post-title">Salud mental en la migración: el duelo migratorio que ocurre en silencio.</h3>
+            <p class="post-excerpt">Las etapas del duelo migratorio adaptadas a Chile, los síntomas más comunes en los primeros seis meses y la diferencia entre adaptación normal y señales de alerta.</p>
+            <div class="post-meta">Por <strong>Dra. Sofía Méndez</strong> · 18 abril · 6 min lectura</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="nl">
+      <div class="container">
+        <div class="nl-grid">
+          <div class="nl-content">
+            <span class="eyebrow" style="color: var(--ochre-soft)">Recibe la guía mensual</span>
+            <h2>Una vez al mes, en tu correo: <em>solo lo que sirve.</em></h2>
+            <p>Sin spam. Sin contenido genérico. Lo que la comunidad encontró útil este mes, los próximos eventos en tu ciudad y los recursos nuevos.</p>
+            <form class="nl-form" onsubmit="event.preventDefault(); alert('Demo — implementar con servicio de email');">
+              <input class="nl-input" type="email" placeholder="tucorreo@ejemplo.com" required aria-label="Tu correo electrónico">
+              <button class="nl-btn" type="submit">Suscribirme →</button>
+            </form>
+            <p class="nl-meta">Ya somos +3.200 personas suscritas. Puedes desuscribirte cuando quieras.</p>
+          </div>
+          <div class="nl-perks">
+            <div class="nl-perk">
+              <div class="nl-perk-num">01</div>
+              <div class="nl-perk-text"><strong>Trámite del mes explicado</strong>El paso a paso, los formularios y los tiempos reales.</div>
+            </div>
+            <div class="nl-perk">
+              <div class="nl-perk-num">02</div>
+              <div class="nl-perk-text"><strong>Eventos de tu ciudad</strong>Calendario filtrado para Santiago, Valparaíso o donde estés.</div>
+            </div>
+            <div class="nl-perk">
+              <div class="nl-perk-num">03</div>
+              <div class="nl-perk-text"><strong>Una historia real</strong>Una persona de la comunidad cuenta cómo resolvió algo difícil.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="ftr-grid">
+        <div class="ftr-brand">
+          <div class="logo">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span style="color: var(--cream)">Valientes con Maleta</span>
+          </div>
+          <p class="ftr-tag">La comunidad que acompaña a personas migrantes en Chile en su proceso de inserción, emprendimiento y reconstrucción de identidad.</p>
+        </div>
+        <div class="ftr-col">
+          <h4>Comunidad</h4>
+          <ul>
+            <li><a href="/comunidad">Quiénes somos</a></li>
+            <li><a href="/equipo">El equipo</a></li>
+            <li><a href="/se-parte">Sé parte</a></li>
+            <li><a href="/aportar">Aportar a la causa</a></li>
+          </ul>
+        </div>
+        <div class="ftr-col">
+          <h4>Contenido</h4>
+          <ul>
+            <li><a href="/eventos">Eventos</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/podcast">Podcast</a></li>
+            <li><a href="/recursos">Recursos descargables</a></li>
+          </ul>
+        </div>
+        <div class="ftr-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:hola@valientesconmaleta.com">hola@valientesconmaleta.com</a></li>
+            <li><a href="https://wa.me/56000000000">WhatsApp</a></li>
+            <li><a href="/contacto">Formulario</a></li>
+            <li><a href="/prensa">Prensa & Aliados</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ftr-bottom">
+        <div class="ftr-legal">
+          © 2026 Valientes con Maleta · Hecho en Chile · <a href="/politica-de-privacidad" style="color: rgba(245,239,230,.7)">Política de privacidad</a> · <a href="/terminos" style="color: rgba(245,239,230,.7)">Términos</a>
+        </div>
+        <div class="ftr-social">
+          <a href="https://instagram.com/valientesconmaleta" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.3.6c-.8.3-1.4.7-2 1.3-.6.6-1 1.2-1.3 2C.7 4.6.5 5.4.4 6.7.3 7.9.3 8.3.3 11.6s0 3.6.1 4.9c.1 1.3.3 2.1.6 2.8.3.8.7 1.4 1.3 2 .6.6 1.2 1 2 1.3.7.3 1.5.5 2.8.6 1.2.1 1.6.1 4.9.1s3.6 0 4.9-.1c1.3-.1 2.1-.3 2.8-.6.8-.3 1.4-.7 2-1.3.6-.6 1-1.2 1.3-2 .3-.7.5-1.5.6-2.8.1-1.2.1-1.6.1-4.9s0-3.6-.1-4.9c-.1-1.3-.3-2.1-.6-2.8-.3-.8-.7-1.4-1.3-2-.6-.6-1.2-1-2-1.3C19 .3 18.2.1 16.9.1 15.7 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zM18.4 4.2c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.6-1.4-1.4-1.4z"/></svg>
+          </a>
+          <a href="https://youtube.com/@valientesconmaleta" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1.1-1.8-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6c-1 .3-1.8 1.1-2.1 2.1C0 8.2 0 12 0 12s0 3.8.5 5.8c.3 1 1.1 1.8 2.1 2.1 2 .6 9.4.6 9.4.6s7.4 0 9.4-.6c1-.3 1.8-1.1 2.1-2.1.5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/valientesconmaleta" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.3a1.7 1.7 0 110-3.5 1.7 1.7 0 010 3.5zM19 19h-3v-4.7c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3v-9h2.9v1.2h.1c.4-.8 1.4-1.5 2.8-1.5 3 0 3.5 2 3.5 4.5V19z"/></svg>
+          </a>
+          <a href="https://wa.me/56000000000" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.3-.2-.6-.3zM12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.9 1 1-3.8-.2-.4C2.2 15.7 1.7 13.9 1.7 12c0-5.7 4.6-10.3 10.3-10.3S22.3 6.3 22.3 12 17.7 22 12 22z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MOBILE BOTTOM NAV ==================== -->
+  <nav class="mob-bar" aria-label="Navegación móvil">
+    <a href="/" class="active">
+      <svg viewBox="0 0 22 22" fill="none"><path d="M3 9.5L11 3l8 6.5V19a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+      Inicio
+    </a>
+    <a href="/eventos">
+      <svg viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="15" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M7 2v4M15 2v4M3 9h16" stroke="currentColor" stroke-width="1.5"/></svg>
+      Eventos
+    </a>
+    <a href="/recursos">
+      <svg viewBox="0 0 22 22" fill="none"><path d="M4 5h14M4 11h14M4 17h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Recursos
+    </a>
+    <a href="/comunidad">
+      <svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M3 13.5h16M11 3a13 13 0 010 16M11 3a13 13 0 000 16" stroke="currentColor" stroke-width="1.5"/></svg>
+      Comunidad
+    </a>
+    <a href="/menu">
+      <svg viewBox="0 0 22 22" fill="none"><circle cx="6" cy="11" r="1.5" fill="currentColor"/><circle cx="11" cy="11" r="1.5" fill="currentColor"/><circle cx="16" cy="11" r="1.5" fill="currentColor"/></svg>
+      Más
+    </a>
+  </nav>
+
+</body>
+</html>

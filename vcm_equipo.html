@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El equipo y la historia | Valientes con Maleta</title>
+  <meta name="description" content="Conoce a las personas detrás de Valientes con Maleta y los cuatro principios que sostienen la comunidad migrante en Chile: pertenencia, valor tangible, progreso visible y voz propia.">
+  <meta property="og:title" content="El equipo de Valientes con Maleta — Comunidad migrante en Chile">
+  <meta property="og:description" content="La historia, los principios y las personas que hacen posible la comunidad de migrantes en Chile.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "El equipo de Valientes con Maleta",
+    "description": "Personas migrantes y aliadas que sostienen la comunidad VCM en Chile.",
+    "publisher": { "@type": "Organization", "name": "Valientes con Maleta" }
+  }
+  </script>
+  <style>
+    /* === DESIGN TOKENS ============================================ */
+    :root {
+      --ink: #1A1614;
+      --cream: #F5EFE6;
+      --paper: #FFFCF7;
+      --terracotta: #C2522C;
+      --clay: #8C2F1F;
+      --wine: #4A1A2E;
+      --sage: #5C7560;
+      --sage-soft: #DDE4DD;
+      --ochre: #D4A14C;
+      --ochre-soft: #F5E9CF;
+      --niebla: #756A62;
+      --linea: #E5DBCD;
+      --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --max: 1240px;
+      --gap: clamp(16px, 2vw, 24px);
+      --pad-h: clamp(20px, 5vw, 64px);
+    }
+
+    /* === RESET & BASE ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; font-variation-settings: "opsz" 144, "SOFT" 30; }
+    h1 { font-size: clamp(40px, 7vw, 84px); }
+    h2 { font-size: clamp(28px, 4.2vw, 48px); }
+    h3 { font-size: clamp(20px, 2.4vw, 28px); }
+    p { font-size: 16px; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad-h); }
+
+    /* === REUSED COMPONENTS ======================================== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 26px; font-weight: 600; font-size: 15px;
+      border-radius: 4px; transition: all .2s ease;
+    }
+    .btn-primary { background: var(--terracotta); color: #fff; }
+    .btn-primary:hover { background: var(--clay); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+    .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+    .btn-arrow::after { content: "→"; transition: transform .2s; }
+    .btn-arrow:hover::after { transform: translateX(3px); }
+
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px; font-size: 12px;
+      font-weight: 500; letter-spacing: .02em;
+    }
+    .pill-sage { background: var(--sage-soft); color: var(--sage); }
+
+    .eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 14px;
+    }
+    .section-head {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 24px; margin-bottom: 56px; flex-wrap: wrap;
+    }
+    .section-head h2 { max-width: 700px; }
+    .section-link {
+      font-size: 14px; font-weight: 600; color: var(--terracotta);
+      border-bottom: 1.5px solid var(--terracotta); padding-bottom: 2px;
+    }
+    section.section { padding: clamp(64px, 9vw, 120px) 0; }
+
+    /* === NAV (compartido con home) ================================ */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245, 239, 230, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--linea);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px; max-width: var(--max); margin: 0 auto;
+      padding: 0 var(--pad-h);
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--serif); font-weight: 600;
+      font-size: 19px; letter-spacing: -0.01em;
+    }
+    .logo-mark {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--terracotta); position: relative;
+      flex-shrink: 0;
+    }
+    .logo-mark::after {
+      content: ""; position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px; height: 9px;
+      border: 2px solid var(--paper); border-bottom: 0;
+      border-radius: 14px 14px 0 0;
+    }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-link {
+      font-size: 14px; font-weight: 500; color: var(--ink);
+      position: relative; padding: 4px 0;
+    }
+    .nav-link::after {
+      content: ""; position: absolute; left: 0; bottom: -2px;
+      width: 0; height: 1.5px; background: var(--terracotta);
+      transition: width .25s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link.active { color: var(--terracotta); }
+    .nav-cta { display: flex; gap: 12px; align-items: center; }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+    .nav-burger span { width: 22px; height: 1.5px; background: var(--ink); display: block; }
+    @media (max-width: 920px) {
+      .nav-links, .nav-cta .btn-secondary { display: none; }
+      .nav-burger { display: flex; }
+    }
+
+    /* === HERO EDITORIAL =========================================== */
+    .page-hero {
+      padding: clamp(72px, 10vw, 140px) 0 clamp(64px, 8vw, 100px);
+      border-bottom: 1px solid var(--linea);
+    }
+    .page-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: clamp(40px, 6vw, 100px);
+      align-items: end;
+    }
+    .page-hero h1 {
+      font-size: clamp(40px, 7vw, 92px);
+      font-weight: 500; letter-spacing: -0.025em;
+      max-width: 12ch;
+      font-variation-settings: "opsz" 144, "SOFT" 50;
+    }
+    .page-hero h1 em {
+      font-style: italic; color: var(--terracotta);
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .page-hero-side {
+      padding-bottom: 14px;
+    }
+    .page-hero-side p {
+      font-size: 17px; line-height: 1.7;
+      color: var(--niebla); margin-bottom: 16px;
+    }
+    .page-hero-side p:first-of-type {
+      color: var(--ink); font-weight: 500; font-size: 18px;
+    }
+    @media (max-width: 820px) { .page-hero-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+    /* === HERO IMAGE STRIP ========================================= */
+    .hero-strip {
+      height: clamp(280px, 38vw, 460px);
+      background:
+        radial-gradient(at 25% 25%, rgba(212,161,76,.3), transparent 50%),
+        radial-gradient(at 75% 75%, rgba(74,26,46,.5), transparent 60%),
+        linear-gradient(135deg, var(--terracotta), var(--wine));
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--linea);
+    }
+    .hero-strip::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,.03) 24px 25px);
+    }
+    .hero-strip-caption {
+      position: absolute; bottom: 24px; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,.7);
+      font-size: 12px; letter-spacing: .12em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* === MISIÓN / MANIFIESTO ====================================== */
+    .mission {
+      background: var(--paper);
+      padding: clamp(72px, 10vw, 140px) 0;
+      border-bottom: 1px solid var(--linea);
+    }
+    .mission-q {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.25; letter-spacing: -0.015em;
+      max-width: 920px; margin: 0 auto;
+      text-align: center;
+    }
+    .mission-q em {
+      font-style: italic; color: var(--terracotta);
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .mission-divider {
+      width: 40px; height: 1px; background: var(--terracotta);
+      margin: 36px auto;
+    }
+    .mission-byline {
+      text-align: center; font-size: 13px;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--niebla);
+    }
+
+    /* === HISTORIA / ORIGEN ======================================== */
+    .origin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(40px, 6vw, 100px);
+    }
+    .origin-img {
+      aspect-ratio: 3/4;
+      background:
+        radial-gradient(at 30% 30%, rgba(212,161,76,.35), transparent 55%),
+        linear-gradient(170deg, var(--sage), var(--ink) 90%);
+      position: sticky; top: 100px;
+    }
+    .origin-content h2 { margin-bottom: 36px; max-width: 14ch; }
+    .origin-content h2 em { font-style: italic; color: var(--terracotta); }
+    .origin-content p {
+      font-size: 17px; line-height: 1.7;
+      color: var(--ink); margin-bottom: 24px;
+    }
+    .origin-content p.lede {
+      font-size: 20px; color: var(--ink); font-weight: 500;
+      margin-bottom: 32px;
+      padding-left: 20px;
+      border-left: 2px solid var(--terracotta);
+    }
+    .origin-quote {
+      margin: 48px 0; padding: 32px;
+      background: var(--ochre-soft);
+      border-left: 3px solid var(--ochre);
+    }
+    .origin-quote p {
+      font-family: var(--serif); font-style: italic;
+      font-size: clamp(20px, 2.2vw, 26px);
+      color: var(--ink); margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .origin-quote-author {
+      font-size: 13px; color: var(--niebla);
+      letter-spacing: .04em;
+    }
+    @media (max-width: 820px) {
+      .origin-grid { grid-template-columns: 1fr; }
+      .origin-img { aspect-ratio: 16/10; max-height: 320px; position: relative; top: 0; }
+    }
+
+    /* === PILARES (4) — versión expandida ========================== */
+    .pillars {
+      background: var(--wine); color: var(--cream);
+      padding: clamp(80px, 10vw, 140px) 0;
+    }
+    .pillars .eyebrow { color: var(--ochre); }
+    .pillars h2 { color: var(--cream); max-width: 18ch; margin-bottom: 24px; }
+    .pillars-intro {
+      max-width: 560px; color: rgba(245,239,230,.8);
+      font-size: 17px; line-height: 1.7;
+      margin-bottom: 72px;
+    }
+    .pillar-item {
+      display: grid;
+      grid-template-columns: 80px 1fr 2fr;
+      gap: clamp(20px, 4vw, 60px);
+      padding: 48px 0;
+      border-top: 1px solid rgba(245,239,230,.18);
+      align-items: start;
+    }
+    .pillar-item:last-child {
+      border-bottom: 1px solid rgba(245,239,230,.18);
+    }
+    .pillar-num {
+      font-family: var(--serif); font-size: 28px;
+      color: var(--ochre); line-height: 1;
+      letter-spacing: -0.02em;
+      font-variation-settings: "opsz" 144;
+    }
+    .pillar-item h3 {
+      font-size: clamp(28px, 3vw, 38px);
+      color: var(--cream); margin-bottom: 0;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+    }
+    .pillar-body p {
+      color: rgba(245,239,230,.78); font-size: 16px;
+      line-height: 1.65; margin-bottom: 14px;
+    }
+    .pillar-tags {
+      margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .pillar-tag {
+      font-size: 12px; padding: 5px 12px; border-radius: 999px;
+      background: rgba(245,239,230,.1); color: var(--ochre-soft);
+      letter-spacing: .02em;
+    }
+    @media (max-width: 720px) {
+      .pillar-item { grid-template-columns: 1fr; gap: 16px; }
+      .pillar-num { font-size: 22px; }
+    }
+
+    /* === EL EQUIPO ================================================ */
+    .team-section {
+      background: var(--cream);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--linea);
+    }
+    .member {
+      padding: 36px 28px;
+      border-right: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+      background: var(--paper);
+      transition: background .2s;
+    }
+    .member:hover { background: var(--cream); }
+    .member-photo {
+      aspect-ratio: 4/5;
+      background: linear-gradient(150deg, var(--sage-soft), var(--ochre-soft));
+      margin-bottom: 24px;
+      position: relative; overflow: hidden;
+    }
+    .member-photo::after {
+      content: attr(data-initials);
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--serif); font-size: 80px;
+      font-weight: 500; color: rgba(26,22,20,.18);
+      letter-spacing: -0.04em;
+    }
+    .member-name {
+      font-family: var(--serif); font-size: 22px;
+      font-weight: 500; line-height: 1.2;
+      letter-spacing: -0.01em; margin-bottom: 4px;
+    }
+    .member-role {
+      font-size: 13px; color: var(--terracotta);
+      font-weight: 600; letter-spacing: .04em;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    .member-origin {
+      font-size: 13px; color: var(--niebla);
+      margin-bottom: 14px;
+    }
+    .member-origin::before {
+      content: ""; display: inline-block;
+      width: 14px; height: 1px; background: var(--terracotta);
+      vertical-align: middle; margin-right: 8px;
+    }
+    .member-bio {
+      font-size: 14px; color: var(--ink);
+      line-height: 1.55; margin-bottom: 16px;
+    }
+    .member-tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      padding-top: 14px; border-top: 1px solid var(--linea);
+    }
+    .member-tag {
+      font-size: 11px; color: var(--niebla);
+      padding: 3px 10px; background: var(--cream);
+      border-radius: 999px;
+    }
+
+    /* === IMPACTO ================================================== */
+    .impact {
+      background: var(--ink); color: var(--cream);
+      padding: clamp(72px, 10vw, 130px) 0;
+    }
+    .impact h2 { color: var(--cream); max-width: 18ch; margin-bottom: 60px; }
+    .impact h2 em { font-style: italic; color: var(--ochre); }
+    .impact .eyebrow { color: var(--ochre); }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      border-top: 1px solid rgba(245,239,230,.2);
+    }
+    .impact-cell {
+      padding: 36px 24px;
+      border-right: 1px solid rgba(245,239,230,.15);
+      border-bottom: 1px solid rgba(245,239,230,.2);
+    }
+    .impact-cell:last-child { border-right: 0; }
+    .impact-num {
+      font-family: var(--serif); font-size: clamp(48px, 6vw, 76px);
+      font-weight: 500; line-height: 1;
+      color: var(--terracotta);
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .impact-num span { font-size: .55em; color: rgba(245,239,230,.6); }
+    .impact-lbl {
+      font-size: 14px; color: rgba(245,239,230,.85);
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .impact-cell { border-right: 0; }
+    }
+
+    /* === ALIADOS ================================================== */
+    .partners {
+      background: var(--paper); padding: clamp(56px, 7vw, 90px) 0;
+      border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea);
+      text-align: center;
+    }
+    .partners-eyebrow {
+      font-size: 12px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--niebla);
+      margin-bottom: 32px;
+    }
+    .partners-row {
+      display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+      gap: clamp(28px, 5vw, 64px);
+    }
+    .partner-name {
+      font-family: var(--serif); font-size: clamp(20px, 2vw, 26px);
+      font-weight: 400; color: var(--niebla);
+      letter-spacing: -0.01em;
+      transition: color .2s;
+    }
+    .partner-name:hover { color: var(--ink); }
+
+    /* === CTA FINAL ================================================ */
+    .cta-final {
+      background: var(--terracotta); color: #fff;
+      padding: clamp(80px, 12vw, 160px) 0;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-final::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(at 20% 80%, rgba(0,0,0,.15), transparent 50%),
+        radial-gradient(at 80% 20%, rgba(212,161,76,.25), transparent 50%);
+    }
+    .cta-final-inner { position: relative; }
+    .cta-final h2 {
+      color: #fff; font-weight: 400;
+      font-size: clamp(36px, 5.5vw, 68px);
+      max-width: 16ch; margin: 0 auto 24px;
+      letter-spacing: -0.025em;
+    }
+    .cta-final h2 em {
+      font-style: italic;
+      color: var(--ochre-soft);
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .cta-final p {
+      color: rgba(255,255,255,.85);
+      font-size: 18px; max-width: 540px;
+      margin: 0 auto 40px;
+    }
+    .cta-final .btn { background: #fff; color: var(--terracotta); }
+    .cta-final .btn:hover { background: var(--ochre-soft); }
+
+    /* === FOOTER (compartido) ====================================== */
+    footer {
+      background: var(--ink); color: var(--cream);
+      padding: clamp(64px, 8vw, 96px) 0 32px;
+    }
+    .ftr-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: var(--gap);
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(245,239,230,.15);
+    }
+    .ftr-brand .logo { color: var(--cream); }
+    .ftr-tag {
+      margin-top: 20px; font-size: 14px;
+      color: rgba(245,239,230,.7); line-height: 1.6;
+      max-width: 320px;
+    }
+    .ftr-col h4 {
+      font-family: var(--sans); font-size: 12px;
+      font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(245,239,230,.5);
+      margin-bottom: 20px; line-height: 1;
+    }
+    .ftr-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .ftr-col a { font-size: 15px; color: var(--cream); transition: color .2s; }
+    .ftr-col a:hover { color: var(--ochre); }
+    .ftr-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 28px; flex-wrap: wrap; gap: 16px;
+    }
+    .ftr-legal { font-size: 12px; color: rgba(245,239,230,.5); }
+    .ftr-social { display: flex; gap: 14px; }
+    .ftr-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(245,239,230,.08);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ftr-social a:hover { background: var(--terracotta); }
+    .ftr-social svg { width: 16px; height: 16px; fill: var(--cream); }
+    @media (max-width: 720px) { .ftr-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 460px) { .ftr-grid { grid-template-columns: 1fr; } }
+
+    /* === MOBILE BOTTOM BAR ======================================== */
+    .mob-bar { display: none; }
+    @media (max-width: 720px) {
+      .mob-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+        background: var(--paper); border-top: 1px solid var(--linea);
+        padding: 8px 4px 14px; z-index: 90;
+      }
+      .mob-bar a {
+        flex: 1; display: flex; flex-direction: column;
+        align-items: center; gap: 3px; font-size: 10px;
+        color: var(--niebla); padding: 6px 0;
+      }
+      .mob-bar a.active { color: var(--terracotta); }
+      .mob-bar svg { width: 22px; height: 22px; }
+      body { padding-bottom: 68px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAV ==================== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="Inicio — Valientes con Maleta">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>Valientes con Maleta</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="/comunidad" class="nav-link active">Comunidad</a>
+        <a href="/eventos" class="nav-link">Eventos</a>
+        <a href="/recursos" class="nav-link">Recursos</a>
+        <a href="/blog" class="nav-link">Blog</a>
+        <a href="/podcast" class="nav-link">Podcast</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="/se-parte" class="btn btn-secondary" style="padding:10px 20px;font-size:14px">Únete a la comunidad</a>
+      </div>
+      <button class="nav-burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-grid">
+          <div>
+            <span class="eyebrow">El equipo y la historia</span>
+            <h1>Personas que <em>migraron</em> y se quedaron a abrir la puerta.</h1>
+          </div>
+          <div class="page-hero-side">
+            <p>Valientes con Maleta nació en 2022, en una mesa larga de Santiago, entre cinco mujeres que ya habían cruzado fronteras y se preguntaban: ¿qué nos hubiera ayudado el primer mes?</p>
+            <p>Hoy somos una comunidad de más de 1.200 personas migrantes en Chile, sostenida por un equipo de 8 — todas y todos atravesando, a su manera, el proceso de hacer vida en un país nuevo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual strip -->
+    <div class="hero-strip" role="img" aria-label="Imagen del equipo de Valientes con Maleta en un evento en Santiago">
+      <div class="hero-strip-caption">Encuentro anual VCM · Santiago, marzo 2026</div>
+    </div>
+
+    <!-- ==================== MISSION ==================== -->
+    <section class="mission">
+      <div class="container">
+        <div class="mission-q">
+          Creemos que migrar a Chile no debería ser <em>un trámite solitario</em> — sino un proceso compartido, con información clara, red real y dignidad de principio a fin.
+        </div>
+        <div class="mission-divider" aria-hidden="true"></div>
+        <p class="mission-byline">Misión · Valientes con Maleta</p>
+      </div>
+    </section>
+
+    <!-- ==================== ORIGIN ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="origin-grid">
+          <div class="origin-img" role="img" aria-label="Foto del primer encuentro VCM en 2022"></div>
+          <div class="origin-content">
+            <span class="eyebrow">Cómo empezó</span>
+            <h2>De una conversación entre cinco, a una comunidad de <em>mil doscientas.</em></h2>
+            <p class="lede">Empezó como una WhatsApp group de cinco personas que se cansaron de buscar respuestas en foros olvidados de 2014. En un año éramos 80. Hoy somos comunidad.</p>
+            <p>Pao llegó a Chile siguiendo a su pareja en 2019. Katherine cruzó desde Caracas con un título de ingeniera y una maleta en 2020. Sofía es chilena pero pasó cuatro años en Berlín y volvió con la cabeza migrada para siempre. Las tres se cruzaron en una feria de emprendimiento migrante en Providencia y se prometieron que iban a hacer algo.</p>
+            <p>"Algo" empezó como un grupo de WhatsApp en agosto de 2022. Luego fue un blog en Wix. Después fue un evento mensual en una cafetería de Ñuñoa. Hoy, casi cuatro años después, es una comunidad que recibe en promedio 12 personas nuevas cada semana, con un podcast en Spotify, talleres en tres ciudades de Chile y una biblioteca de recursos que ya nos dijeron que es "la guía que ojalá hubiéramos tenido".</p>
+            <div class="origin-quote">
+              <p>"Lo que nos diferencia no es la información — esa también la encuentras en el SERMIG si tienes paciencia. Lo que nos diferencia es que aquí alguien que ya pasó por ahí te toma el café y te lo explica."</p>
+              <div class="origin-quote-author">— Pao Nardin, cofundadora</div>
+            </div>
+            <p>Seguimos siendo independientes y autosostenidas, financiadas por aportes voluntarios de la comunidad y por talleres que dictamos para empresas que quieren aprender a recibir mejor a sus equipos migrantes. No tenemos accionistas, no vendemos data, no recomendamos abogados pagados. Lo que ves es lo que hay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PILARES ==================== -->
+    <section class="pillars">
+      <div class="container">
+        <span class="eyebrow">Los cuatro pilares</span>
+        <h2>Lo que sostiene a la comunidad — y los principios que nadie va a romper.</h2>
+        <p class="pillars-intro">Cada decisión que tomamos como equipo — qué evento hacer, qué post publicar, a quién invitar al podcast — pasa por estos cuatro filtros. Si no entra en ninguno, no se hace.</p>
+
+        <div class="pillar-item">
+          <div class="pillar-num">01</div>
+          <div><h3>Pertenencia</h3></div>
+          <div class="pillar-body">
+            <p>La migración aísla. Lo que ofrecemos primero es la sensación de que alguien entiende — antes que cualquier consejo, cualquier guía, cualquier solución. Cada persona nueva tiene un primer punto de contacto humano dentro de los primeros siete días.</p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">Bienvenida 1-a-1</span>
+              <span class="pillar-tag">Grupo WhatsApp activo</span>
+              <span class="pillar-tag">Encuentros mensuales</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar-item">
+          <div class="pillar-num">02</div>
+          <div><h3>Valor tangible</h3></div>
+          <div class="pillar-body">
+            <p>Cada interacción debería dejarte algo concreto en la mano: un trámite resuelto, un contacto útil, un siguiente paso claro. No abrazos genéricos — información práctica, validada por personas que ya pasaron por ahí.</p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">Guías paso a paso</span>
+              <span class="pillar-tag">Plantillas descargables</span>
+              <span class="pillar-tag">Mentorías 1-a-1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar-item">
+          <div class="pillar-num">03</div>
+          <div><h3>Progreso visible</h3></div>
+          <div class="pillar-body">
+            <p>La migración se siente como caer en un agujero negro de trámites y duelo. Hacemos visible cada pequeño paso: el RUT que sacaste, el primer cliente que conseguiste, el evento al que te animaste a ir. La migración como crecimiento, no como pérdida.</p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">Trayectoria de miembro</span>
+              <span class="pillar-tag">Hitos compartidos</span>
+              <span class="pillar-tag">Celebraciones públicas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar-item">
+          <div class="pillar-num">04</div>
+          <div><h3>Voz propia</h3></div>
+          <div class="pillar-body">
+            <p>Quien recibió acompañamiento un día, mañana es quien lo da. Promovemos que los miembros pasen a contribuyentes: escribir en el blog, hospedar un evento, ser invitadas al podcast, mentoriar a quienes recién llegan. La comunidad se sostiene en la circulación de la voz.</p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">Blog abierto a la comunidad</span>
+              <span class="pillar-tag">Programa de mentoría</span>
+              <span class="pillar-tag">Podcast colaborativo</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TEAM ==================== -->
+    <section class="section team-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Las personas detrás</span>
+            <h2>Ocho personas, siete pasaportes, una causa.</h2>
+          </div>
+          <a href="/se-parte#colaborar" class="section-link">Súmate al equipo</a>
+        </div>
+      </div>
+
+      <div class="team-grid">
+        <article class="member">
+          <div class="member-photo" data-initials="P"></div>
+          <h3 class="member-name">Pao Nardin</h3>
+          <div class="member-role">Cofundadora · Dirección</div>
+          <div class="member-origin">Argentina → Santiago, 2019</div>
+          <p class="member-bio">Periodista. Llegó siguiendo a su pareja y terminó hospedando el primer encuentro VCM en su living. Hoy dirige la estrategia comunitaria del proyecto.</p>
+          <div class="member-tags">
+            <span class="member-tag">Comunicación</span>
+            <span class="member-tag">Comunidad</span>
+          </div>
+        </article>
+
+        <article class="member">
+          <div class="member-photo" data-initials="K"></div>
+          <h3 class="member-name">Katherine León</h3>
+          <div class="member-role">Cofundadora · Programa de emprendimiento</div>
+          <div class="member-origin">Venezuela → Santiago, 2020</div>
+          <p class="member-bio">Ingeniera comercial. Llegó con título y sin saber qué era el SII. Lidera el programa de emprendimiento y mentoría para migrantes que quieren formalizar su negocio en Chile.</p>
+          <div class="member-tags">
+            <span class="member-tag">Emprendimiento</span>
+            <span class="member-tag">Finanzas</span>
+          </div>
+        </article>
+
+        <article class="member">
+          <div class="member-photo" data-initials="S"></div>
+          <h3 class="member-name">Dra. Sofía Méndez</h3>
+          <div class="member-role">Directora psicóloga</div>
+          <div class="member-origin">Chile · 4 años en Berlín</div>
+          <p class="member-bio">Psicóloga clínica con especialización en duelo migratorio. Lidera el programa de bienestar y la línea editorial de salud mental del blog.</p>
+          <div class="member-tags">
+            <span class="member-tag">Bienestar</span>
+            <span class="member-tag">Salud mental</span>
+          </div>
+        </article>
+
+        <article class="member">
+          <div class="member-photo" data-initials="J"></div>
+          <h3 class="member-name">Jarka Paprnáková</h3>
+          <div class="member-role">Producción · Podcast</div>
+          <div class="member-origin">Eslovaquia → Valparaíso, 2018</div>
+          <p class="member-bio">Productora audiovisual. Conduce y produce el podcast "Mujeres que inspiran". Su mirada europea+latinoamericana abre conversaciones que en Chile no se daban.</p>
+          <div class="member-tags">
+            <span class="member-tag">Podcast</span>
+            <span class="member-tag">Contenido</span>
+          </div>
+        </article>
+
+        <article class="member">
+          <div class="member-photo" data-initials="Y"></div>
+          <h3 class="member-name">Yulieth Hidalgo</h3>
+          <div class="member-role">Coordinación · Trámites & Legalidad</div>
+          <div class="member-origin">Colombia → Valparaíso, 2021</div>
+          <p class="member-bio">Abogada con experiencia en derecho migratorio. Coordina la línea de contenido legal y mantiene actualizadas todas las guías de trámites del blog.</p>
+          <div class="member-tags">
+            <span class="member-tag">Legal</span>
+            <span class="member-tag">Trámites</span>
+          </div>
+        </article>
+
+        <article class="member">
+          <div class="member-photo" data-initials="R"></div>
+          <h3 class="member-name">Rodrigo Salas</h3>
+          <div class="member-role">Diseño & Producto</div>
+          <div class="member-origin">Perú → Santiago, 2017</div>
+          <p class="member-bio">Diseñador. Construyó la primera versión del sitio en una semana de noches. Hoy mantiene la identidad visual y el sistema digital de la comunidad.</p>
+          <div class="member-tags">
+            <span class="member-tag">Diseño</span>
+            <span class="member-tag">Producto</span>
+          </div>
+        </article>
+
+        <article class="member">
+          <div class="member-photo" data-initials="C"></div>
+          <h3 class="member-name">Camila Reyes</h3>
+          <div class="member-role">Coordinación de eventos</div>
+          <div class="member-origin">Colombia → Santiago, 2023</div>
+          <p class="member-bio">Comunicadora. Pasó de ser miembro de la comunidad a coordinar todos los eventos del año. Su historia es la prueba viva del cuarto pilar.</p>
+          <div class="member-tags">
+            <span class="member-tag">Eventos</span>
+            <span class="member-tag">Comunidad</span>
+          </div>
+        </article>
+
+        <article class="member">
+          <div class="member-photo" data-initials="A"></div>
+          <h3 class="member-name">Andrés Quispe</h3>
+          <div class="member-role">Programa de mentoría</div>
+          <div class="member-origin">Bolivia → Antofagasta, 2016</div>
+          <p class="member-bio">Emprendedor del rubro gastronómico. Lleva el programa de mentoría 1-a-1 para personas migrantes que están dando los primeros pasos con su negocio.</p>
+          <div class="member-tags">
+            <span class="member-tag">Mentoría</span>
+            <span class="member-tag">Negocios</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== IMPACTO ==================== -->
+    <section class="impact">
+      <div class="container">
+        <span class="eyebrow">El impacto</span>
+        <h2>Lo que sucede cuando una persona migrante <em>encuentra comunidad.</em></h2>
+        <div class="impact-grid">
+          <div class="impact-cell">
+            <div class="impact-num">1.247</div>
+            <div class="impact-lbl">Personas activas en la comunidad VCM</div>
+          </div>
+          <div class="impact-cell">
+            <div class="impact-num">11<span> países</span></div>
+            <div class="impact-lbl">Origen de nuestros miembros — desde Venezuela hasta Eslovaquia</div>
+          </div>
+          <div class="impact-cell">
+            <div class="impact-num">48</div>
+            <div class="impact-lbl">Eventos realizados en 2025 — Santiago, Valparaíso, Antofagasta y online</div>
+          </div>
+          <div class="impact-cell">
+            <div class="impact-num">93<span>%</span></div>
+            <div class="impact-lbl">De miembros recomendaría VCM a otra persona migrante</div>
+          </div>
+          <div class="impact-cell">
+            <div class="impact-num">312</div>
+            <div class="impact-lbl">Mentorías 1-a-1 entregadas desde 2023</div>
+          </div>
+          <div class="impact-cell">
+            <div class="impact-num">62</div>
+            <div class="impact-lbl">Negocios formalizados en Chile con apoyo de VCM</div>
+          </div>
+          <div class="impact-cell">
+            <div class="impact-num">12</div>
+            <div class="impact-lbl">Episodios de podcast en Spotify, Apple y YouTube</div>
+          </div>
+          <div class="impact-cell">
+            <div class="impact-num">100<span>%</span></div>
+            <div class="impact-lbl">Independientes — sin financiamiento corporativo ni gubernamental</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ALIADOS ==================== -->
+    <section class="partners">
+      <div class="container">
+        <div class="partners-eyebrow">Aliados que sostienen el camino</div>
+        <div class="partners-row">
+          <span class="partner-name">Servicio Jesuita a Migrantes</span>
+          <span class="partner-name">Fundación CREA</span>
+          <span class="partner-name">Sello Migrante</span>
+          <span class="partner-name">Cámara de Comercio</span>
+          <span class="partner-name">Universidad Diego Portales</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section class="cta-final">
+      <div class="cta-final-inner">
+        <div class="container">
+          <h2>Llegaste con coraje.<br><em>Sigue con compañía.</em></h2>
+          <p>Súmate a la comunidad. Es gratis, es real, y empieza con un mensaje de bienvenida que no es automático.</p>
+          <a href="/se-parte" class="btn btn-arrow">Únete a la comunidad</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="ftr-grid">
+        <div class="ftr-brand">
+          <div class="logo">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span style="color: var(--cream)">Valientes con Maleta</span>
+          </div>
+          <p class="ftr-tag">La comunidad que acompaña a personas migrantes en Chile en su proceso de inserción, emprendimiento y reconstrucción de identidad.</p>
+        </div>
+        <div class="ftr-col">
+          <h4>Comunidad</h4>
+          <ul>
+            <li><a href="/comunidad">Quiénes somos</a></li>
+            <li><a href="/equipo">El equipo</a></li>
+            <li><a href="/se-parte">Sé parte</a></li>
+            <li><a href="/aportar">Aportar a la causa</a></li>
+          </ul>
+        </div>
+        <div class="ftr-col">
+          <h4>Contenido</h4>
+          <ul>
+            <li><a href="/eventos">Eventos</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/podcast">Podcast</a></li>
+            <li><a href="/recursos">Recursos descargables</a></li>
+          </ul>
+        </div>
+        <div class="ftr-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:hola@valientesconmaleta.com">hola@valientesconmaleta.com</a></li>
+            <li><a href="https://wa.me/56000000000">WhatsApp</a></li>
+            <li><a href="/contacto">Formulario</a></li>
+            <li><a href="/prensa">Prensa & Aliados</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ftr-bottom">
+        <div class="ftr-legal">
+          © 2026 Valientes con Maleta · Hecho en Chile · <a href="/politica-de-privacidad" style="color: rgba(245,239,230,.7)">Política de privacidad</a> · <a href="/terminos" style="color: rgba(245,239,230,.7)">Términos</a>
+        </div>
+        <div class="ftr-social">
+          <a href="https://instagram.com/valientesconmaleta" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.3.6c-.8.3-1.4.7-2 1.3-.6.6-1 1.2-1.3 2C.7 4.6.5 5.4.4 6.7.3 7.9.3 8.3.3 11.6s0 3.6.1 4.9c.1 1.3.3 2.1.6 2.8.3.8.7 1.4 1.3 2 .6.6 1.2 1 2 1.3.7.3 1.5.5 2.8.6 1.2.1 1.6.1 4.9.1s3.6 0 4.9-.1c1.3-.1 2.1-.3 2.8-.6.8-.3 1.4-.7 2-1.3.6-.6 1-1.2 1.3-2 .3-.7.5-1.5.6-2.8.1-1.2.1-1.6.1-4.9s0-3.6-.1-4.9c-.1-1.3-.3-2.1-.6-2.8-.3-.8-.7-1.4-1.3-2-.6-.6-1.2-1-2-1.3C19 .3 18.2.1 16.9.1 15.7 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zM18.4 4.2c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.6-1.4-1.4-1.4z"/></svg></a>
+          <a href="https://youtube.com/@valientesconmaleta" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1.1-1.8-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6c-1 .3-1.8 1.1-2.1 2.1C0 8.2 0 12 0 12s0 3.8.5 5.8c.3 1 1.1 1.8 2.1 2.1 2 .6 9.4.6 9.4.6s7.4 0 9.4-.6c1-.3 1.8-1.1 2.1-2.1.5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+          <a href="https://linkedin.com/company/valientesconmaleta" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.3a1.7 1.7 0 110-3.5 1.7 1.7 0 010 3.5zM19 19h-3v-4.7c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3v-9h2.9v1.2h.1c.4-.8 1.4-1.5 2.8-1.5 3 0 3.5 2 3.5 4.5V19z"/></svg></a>
+          <a href="https://wa.me/56000000000" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.3-.2-.6-.3zM12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.9 1 1-3.8-.2-.4C2.2 15.7 1.7 13.9 1.7 12c0-5.7 4.6-10.3 10.3-10.3S22.3 6.3 22.3 12 17.7 22 12 22z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MOBILE BOTTOM NAV ==================== -->
+  <nav class="mob-bar" aria-label="Navegación móvil">
+    <a href="/">
+      <svg viewBox="0 0 22 22" fill="none"><path d="M3 9.5L11 3l8 6.5V19a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+      Inicio
+    </a>
+    <a href="/eventos">
+      <svg viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="15" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M7 2v4M15 2v4M3 9h16" stroke="currentColor" stroke-width="1.5"/></svg>
+      Eventos
+    </a>
+    <a href="/recursos">
+      <svg viewBox="0 0 22 22" fill="none"><path d="M4 5h14M4 11h14M4 17h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Recursos
+    </a>
+    <a href="/comunidad" class="active">
+      <svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M3 13.5h16M11 3a13 13 0 010 16M11 3a13 13 0 000 16" stroke="currentColor" stroke-width="1.5"/></svg>
+      Comunidad
+    </a>
+    <a href="/menu">
+      <svg viewBox="0 0 22 22" fill="none"><circle cx="6" cy="11" r="1.5" fill="currentColor"/><circle cx="11" cy="11" r="1.5" fill="currentColor"/><circle cx="16" cy="11" r="1.5" fill="currentColor"/></svg>
+      Más
+    </a>
+  </nav>
+
+</body>
+</html>
